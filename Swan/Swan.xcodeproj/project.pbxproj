@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		734E72F21B09B80A009346D3 /* ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734E72F11B09B80A009346D3 /* ExtensionsTests.swift */; };
+		738AA03B1AD7A1C500662281 /* Swan.h in Headers */ = {isa = PBXBuildFile; fileRef = 738AA03A1AD7A1C500662281 /* Swan.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		738AA0411AD7A1C500662281 /* Swan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738AA0351AD7A1C500662281 /* Swan.framework */; };
+		738AA0521AD7A1EE00662281 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738AA0511AD7A1EE00662281 /* Extensions.swift */; };
+		73B2EAD01AF0ED020026D5DB /* SwanBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B2EACF1AF0ED020026D5DB /* SwanBridge.framework */; };
+		73D523DA1B0F14E900E98FDB /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D523D91B0F14E900E98FDB /* StringExtension.swift */; };
+		73D523DC1B0F154400E98FDB /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D523DB1B0F154400E98FDB /* StringExtensionTests.swift */; };
+		73D523DE1B0F255F00E98FDB /* CGFloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D523DD1B0F255F00E98FDB /* CGFloatExtension.swift */; };
+		73D523E01B0F2B1500E98FDB /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D523DF1B0F2B1500E98FDB /* NSDateExtension.swift */; };
+		73D523E21B0F2B5E00E98FDB /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D523E11B0F2B5E00E98FDB /* UIColorExtension.swift */; };
+		73D523E41B0F2B9200E98FDB /* NSCalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D523E31B0F2B9200E98FDB /* NSCalendarExtension.swift */; };
+		73D523E81B0F30B800E98FDB /* CGRectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D523E71B0F30B800E98FDB /* CGRectExtensions.swift */; };
+		73D523EA1B0F314600E98FDB /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D523E91B0F314600E98FDB /* UIViewExtensions.swift */; };
+		73D523EF1B0F336D00E98FDB /* CGRectExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D523EE1B0F336D00E98FDB /* CGRectExtensionsTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		738AA0421AD7A1C500662281 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 738AA02C1AD7A1C500662281 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 738AA0341AD7A1C500662281;
+			remoteInfo = Swan;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		734E72F11B09B80A009346D3 /* ExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionsTests.swift; sourceTree = "<group>"; };
+		738AA0351AD7A1C500662281 /* Swan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		738AA0391AD7A1C500662281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		738AA03A1AD7A1C500662281 /* Swan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Swan.h; sourceTree = "<group>"; };
+		738AA0401AD7A1C500662281 /* SwanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		738AA0461AD7A1C500662281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		738AA0511AD7A1EE00662281 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		73B2EACF1AF0ED020026D5DB /* SwanBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwanBridge.framework; path = "../SwanBridge/build/Debug-iphoneos/SwanBridge.framework"; sourceTree = "<group>"; };
+		73D523D91B0F14E900E98FDB /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		73D523DB1B0F154400E98FDB /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
+		73D523DD1B0F255F00E98FDB /* CGFloatExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloatExtension.swift; sourceTree = "<group>"; };
+		73D523DF1B0F2B1500E98FDB /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
+		73D523E11B0F2B5E00E98FDB /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		73D523E31B0F2B9200E98FDB /* NSCalendarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCalendarExtension.swift; sourceTree = "<group>"; };
+		73D523E71B0F30B800E98FDB /* CGRectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtensions.swift; sourceTree = "<group>"; };
+		73D523E91B0F314600E98FDB /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		73D523EE1B0F336D00E98FDB /* CGRectExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtensionsTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		738AA0311AD7A1C500662281 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73B2EAD01AF0ED020026D5DB /* SwanBridge.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		738AA03D1AD7A1C500662281 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				738AA0411AD7A1C500662281 /* Swan.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		738AA02B1AD7A1C500662281 = {
+			isa = PBXGroup;
+			children = (
+				73B2EACF1AF0ED020026D5DB /* SwanBridge.framework */,
+				738AA0371AD7A1C500662281 /* Swan */,
+				738AA0441AD7A1C500662281 /* SwanTests */,
+				738AA0361AD7A1C500662281 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		738AA0361AD7A1C500662281 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				738AA0351AD7A1C500662281 /* Swan.framework */,
+				738AA0401AD7A1C500662281 /* SwanTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		738AA0371AD7A1C500662281 /* Swan */ = {
+			isa = PBXGroup;
+			children = (
+				738AA03A1AD7A1C500662281 /* Swan.h */,
+				738AA0381AD7A1C500662281 /* Supporting Files */,
+				738AA0511AD7A1EE00662281 /* Extensions.swift */,
+				73D523E71B0F30B800E98FDB /* CGRectExtensions.swift */,
+				73D523E91B0F314600E98FDB /* UIViewExtensions.swift */,
+				73D523E11B0F2B5E00E98FDB /* UIColorExtension.swift */,
+				73D523E31B0F2B9200E98FDB /* NSCalendarExtension.swift */,
+				73D523D91B0F14E900E98FDB /* StringExtension.swift */,
+				73D523DF1B0F2B1500E98FDB /* NSDateExtension.swift */,
+				73D523DD1B0F255F00E98FDB /* CGFloatExtension.swift */,
+			);
+			path = Swan;
+			sourceTree = "<group>";
+		};
+		738AA0381AD7A1C500662281 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				738AA0391AD7A1C500662281 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		738AA0441AD7A1C500662281 /* SwanTests */ = {
+			isa = PBXGroup;
+			children = (
+				734E72F11B09B80A009346D3 /* ExtensionsTests.swift */,
+				73D523EE1B0F336D00E98FDB /* CGRectExtensionsTests.swift */,
+				73D523DB1B0F154400E98FDB /* StringExtensionTests.swift */,
+				738AA0451AD7A1C500662281 /* Supporting Files */,
+			);
+			path = SwanTests;
+			sourceTree = "<group>";
+		};
+		738AA0451AD7A1C500662281 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				738AA0461AD7A1C500662281 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		738AA0321AD7A1C500662281 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				738AA03B1AD7A1C500662281 /* Swan.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		738AA0341AD7A1C500662281 /* Swan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 738AA04B1AD7A1C500662281 /* Build configuration list for PBXNativeTarget "Swan" */;
+			buildPhases = (
+				738AA0301AD7A1C500662281 /* Sources */,
+				738AA0311AD7A1C500662281 /* Frameworks */,
+				738AA0321AD7A1C500662281 /* Headers */,
+				738AA0331AD7A1C500662281 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Swan;
+			productName = Swan;
+			productReference = 738AA0351AD7A1C500662281 /* Swan.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		738AA03F1AD7A1C500662281 /* SwanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 738AA04E1AD7A1C500662281 /* Build configuration list for PBXNativeTarget "SwanTests" */;
+			buildPhases = (
+				738AA03C1AD7A1C500662281 /* Sources */,
+				738AA03D1AD7A1C500662281 /* Frameworks */,
+				738AA03E1AD7A1C500662281 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				738AA0431AD7A1C500662281 /* PBXTargetDependency */,
+			);
+			name = SwanTests;
+			productName = SwanTests;
+			productReference = 738AA0401AD7A1C500662281 /* SwanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		738AA02C1AD7A1C500662281 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				TargetAttributes = {
+					738AA0341AD7A1C500662281 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					738AA03F1AD7A1C500662281 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+				};
+			};
+			buildConfigurationList = 738AA02F1AD7A1C500662281 /* Build configuration list for PBXProject "Swan" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 738AA02B1AD7A1C500662281;
+			productRefGroup = 738AA0361AD7A1C500662281 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				738AA0341AD7A1C500662281 /* Swan */,
+				738AA03F1AD7A1C500662281 /* SwanTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		738AA0331AD7A1C500662281 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		738AA03E1AD7A1C500662281 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		738AA0301AD7A1C500662281 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73D523E41B0F2B9200E98FDB /* NSCalendarExtension.swift in Sources */,
+				73D523E01B0F2B1500E98FDB /* NSDateExtension.swift in Sources */,
+				73D523EA1B0F314600E98FDB /* UIViewExtensions.swift in Sources */,
+				73D523E81B0F30B800E98FDB /* CGRectExtensions.swift in Sources */,
+				73D523DA1B0F14E900E98FDB /* StringExtension.swift in Sources */,
+				73D523E21B0F2B5E00E98FDB /* UIColorExtension.swift in Sources */,
+				73D523DE1B0F255F00E98FDB /* CGFloatExtension.swift in Sources */,
+				738AA0521AD7A1EE00662281 /* Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		738AA03C1AD7A1C500662281 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73D523EF1B0F336D00E98FDB /* CGRectExtensionsTests.swift in Sources */,
+				73D523DC1B0F154400E98FDB /* StringExtensionTests.swift in Sources */,
+				734E72F21B09B80A009346D3 /* ExtensionsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		738AA0431AD7A1C500662281 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 738AA0341AD7A1C500662281 /* Swan */;
+			targetProxy = 738AA0421AD7A1C500662281 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		738AA0491AD7A1C500662281 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		738AA04A1AD7A1C500662281 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		738AA04C1AD7A1C500662281 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Swan/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		738AA04D1AD7A1C500662281 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Swan/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
+			};
+			name = Release;
+		};
+		738AA04F1AD7A1C500662281 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SwanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		738AA0501AD7A1C500662281 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SwanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		738AA02F1AD7A1C500662281 /* Build configuration list for PBXProject "Swan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				738AA0491AD7A1C500662281 /* Debug */,
+				738AA04A1AD7A1C500662281 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		738AA04B1AD7A1C500662281 /* Build configuration list for PBXNativeTarget "Swan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				738AA04C1AD7A1C500662281 /* Debug */,
+				738AA04D1AD7A1C500662281 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		738AA04E1AD7A1C500662281 /* Build configuration list for PBXNativeTarget "SwanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				738AA04F1AD7A1C500662281 /* Debug */,
+				738AA0501AD7A1C500662281 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 738AA02C1AD7A1C500662281 /* Project object */;
+}
