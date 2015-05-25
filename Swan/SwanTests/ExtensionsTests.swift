@@ -32,48 +32,6 @@ class ExtensionsTests : XCTestCase {
         XCTAssert(rgba[0] == 0 && rgba[1] == 0 && rgba[2] == 1 && rgba[3] == 0.5)
     }
 
-    func testCalendar() {
-        measureBlock {
-            for i in 0...500000 {
-                NSCalendar.currentCalendar()
-            }
-        }
-    }
-    
-
-    func testCached() {
-        measureBlock {
-            for i in 0...500 {
-                CFCalendarCopyCurrent()
-            }
-        }
-    }
-    
-
-    func testPerformance() {
-        measureBlock {
-            for i in 0...500000 {
-                NSCalendar.currentCalendar()
-            }
-        }
-    }
-    
-    func testPerformance2() {
-        measureBlock {
-            for i in 0...500000 {
-                NSCalendar.mainThreadSharedCalendar()
-            }
-        }
-    }
-    
-    func testPerformance3() {
-        measureBlock {
-            for i in 0...500000 {
-                NSCalendar.sharedCalendar()
-            }
-        }
-    }
-    
     func testNSDate() {
         let d1 = NSDate(timeIntervalSince1970: 5000)
         let d2 = NSDate(timeIntervalSince1970: 5001)

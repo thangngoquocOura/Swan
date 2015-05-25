@@ -62,15 +62,15 @@ public extension UIColor {
         return rgba[2]
     }
     
-    public var blue8: UInt8 {
+    var blue8: UInt8 {
         return UInt8(self.blue * 255)
     }
     
-    public var alpha: CGFloat {
+    var alpha: CGFloat {
         return rgba[3]
     }
     
-    public var alpha8: UInt8 {
+    var alpha8: UInt8 {
         return UInt8(self.alpha * 255)
     }
     

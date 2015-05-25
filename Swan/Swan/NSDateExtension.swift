@@ -20,43 +20,52 @@ public func <(lhs: NSDate, rhs: NSDate) -> Bool {
     return lhs.timeIntervalSinceDate(rhs) < 0
 }
 
-// MARK: Arithmetic
-/*
-extension NSDate {
+// MARK: Helpers
+
+public extension NSDate {
     
-    public var second: Int {
+    var second: Int {
         return NSCalendar.mainThreadSharedCalendar().component(.CalendarUnitSecond, fromDate: self)
     }
     
-    public var minute: Int {
+    var minute: Int {
         return NSCalendar.mainThreadSharedCalendar().component(.CalendarUnitMinute, fromDate: self)
     }
     
-    public var hour: Int {
+    var hour: Int {
         return NSCalendar.mainThreadSharedCalendar().component(.CalendarUnitHour, fromDate: self)
     }
     
-    public var day: Int {
+    var day: Int {
         return NSCalendar.mainThreadSharedCalendar().component(.CalendarUnitDay, fromDate: self)
     }
     
-    public var month: Int {
+    var month: Int {
         return NSCalendar.mainThreadSharedCalendar().component(.CalendarUnitMonth, fromDate: self)
     }
     
-    public var year: Int {
+    var year: Int {
         return NSCalendar.mainThreadSharedCalendar().component(.CalendarUnitYear, fromDate: self)
     }
     
-    public func midnight() -> NSDate {
-        let calendar = NSCalendar.sharedCalendar()
+    func midnight() -> NSDate {
+        let calendar = NSCalendar.mainThreadSharedCalendar()
         let comps = calendar.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: self)
+        return calendar.dateFromComponents(comps)!
+    }
+    
+    func noon() -> NSDate {
+        let calendar = NSCalendar.mainThreadSharedCalendar()
+        let comps = calendar.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: self)
+        comps.hour = 12
         return calendar.dateFromComponents(comps)!
     }
     
 }
 
-public class TimeUnit {
+// MARK: Date Arithmetic
+
+public struct TimeUnit {
     
     let unit: NSCalendarUnit
     let duration: Int
@@ -69,46 +78,17 @@ public class TimeUnit {
 }
 
 public func +(lhs: NSDate, rhs: TimeUnit) -> NSDate {
-    return NSCalendar.sharedCalendar().dateByAddingUnit(rhs.unit, value: rhs.duration, toDate: lhs, options: .allZeros)!
+    return NSCalendar.mainThreadSharedCalendar().dateByAddingUnit(rhs.unit, value: rhs.duration, toDate: lhs, options: .allZeros)!
 }
 
 public func +=(inout lhs: NSDate, rhs: TimeUnit) {
-    lhs = NSCalendar.sharedCalendar().dateByAddingUnit(rhs.unit, value: rhs.duration, toDate: lhs, options: .allZeros)!
+    lhs = NSCalendar.mainThreadSharedCalendar().dateByAddingUnit(rhs.unit, value: rhs.duration, toDate: lhs, options: .allZeros)!
 }
 
 public func -(lhs: NSDate, rhs: TimeUnit) -> NSDate {
-    return NSCalendar.sharedCalendar().dateByAddingUnit(rhs.unit, value: -rhs.duration, toDate: lhs, options: .allZeros)!
+    return NSCalendar.mainThreadSharedCalendar().dateByAddingUnit(rhs.unit, value: -rhs.duration, toDate: lhs, options: .allZeros)!
 }
 
 public func -=(inout lhs: NSDate, rhs: TimeUnit) {
-    lhs = NSCalendar.sharedCalendar().dateByAddingUnit(rhs.unit, value: -rhs.duration, toDate: lhs, options: .allZeros)!
+    lhs = NSCalendar.mainThreadSharedCalendar().dateByAddingUnit(rhs.unit, value: -rhs.duration, toDate: lhs, options: .allZeros)!
 }
-
-extension Int {
-    
-    public var seconds: TimeUnit {
-        return TimeUnit(.CalendarUnitSecond, duration: self)
-    }
-    
-    public var minutes: TimeUnit {
-        return TimeUnit(.CalendarUnitMinute, duration: self)
-    }
-    
-    public var hours: TimeUnit {
-        return TimeUnit(.CalendarUnitHour, duration: self)
-    }
-    
-    public var days: TimeUnit {
-        return TimeUnit(.CalendarUnitDay, duration: self)
-    }
-    
-    public var months: TimeUnit {
-        return TimeUnit(.CalendarUnitMonth, duration: self)
-    }
-    
-    public var years: TimeUnit {
-        return TimeUnit(.CalendarUnitYear, duration: self)
-    }
-    
-}
-*/

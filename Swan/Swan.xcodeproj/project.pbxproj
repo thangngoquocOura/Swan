@@ -21,6 +21,7 @@
 		73D523E81B0F30B800E98FDB /* CGRectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D523E71B0F30B800E98FDB /* CGRectExtensions.swift */; };
 		73D523EA1B0F314600E98FDB /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D523E91B0F314600E98FDB /* UIViewExtensions.swift */; };
 		73D523EF1B0F336D00E98FDB /* CGRectExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D523EE1B0F336D00E98FDB /* CGRectExtensionsTests.swift */; };
+		73D523F31B12EA0000E98FDB /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D523F21B12EA0000E98FDB /* IntExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		73D523E71B0F30B800E98FDB /* CGRectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtensions.swift; sourceTree = "<group>"; };
 		73D523E91B0F314600E98FDB /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		73D523EE1B0F336D00E98FDB /* CGRectExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtensionsTests.swift; sourceTree = "<group>"; };
+		73D523F21B12EA0000E98FDB /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				73D523E31B0F2B9200E98FDB /* NSCalendarExtension.swift */,
 				73D523D91B0F14E900E98FDB /* StringExtension.swift */,
 				73D523DF1B0F2B1500E98FDB /* NSDateExtension.swift */,
+				73D523F21B12EA0000E98FDB /* IntExtension.swift */,
 				73D523DD1B0F255F00E98FDB /* CGFloatExtension.swift */,
 			);
 			path = Swan;
@@ -247,6 +250,7 @@
 				73D523EA1B0F314600E98FDB /* UIViewExtensions.swift in Sources */,
 				73D523E81B0F30B800E98FDB /* CGRectExtensions.swift in Sources */,
 				73D523DA1B0F14E900E98FDB /* StringExtension.swift in Sources */,
+				73D523F31B12EA0000E98FDB /* IntExtension.swift in Sources */,
 				73D523E21B0F2B5E00E98FDB /* UIColorExtension.swift in Sources */,
 				73D523DE1B0F255F00E98FDB /* CGFloatExtension.swift in Sources */,
 				738AA0521AD7A1EE00662281 /* Extensions.swift in Sources */,
