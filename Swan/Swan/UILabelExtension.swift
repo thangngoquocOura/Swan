@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UILabel {
+public extension UILabel {
     
     func sizeHeightToFit() {
         var frame = self.frame;
