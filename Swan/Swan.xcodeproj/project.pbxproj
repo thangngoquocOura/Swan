@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7328B4BE1B1EBE99001408FD /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7328B4BD1B1EBE99001408FD /* UICollectionViewExtension.swift */; };
 		7328B4C01B1EBF9D001408FD /* UICollectionViewExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7328B4BF1B1EBF9D001408FD /* UICollectionViewExtensionTests.swift */; };
+		733819AC1B1F17EC0066EF89 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733819AB1B1F17EC0066EF89 /* UILabelExtension.swift */; };
 		734E72F21B09B80A009346D3 /* ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734E72F11B09B80A009346D3 /* ExtensionsTests.swift */; };
 		738AA03B1AD7A1C500662281 /* Swan.h in Headers */ = {isa = PBXBuildFile; fileRef = 738AA03A1AD7A1C500662281 /* Swan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		738AA0411AD7A1C500662281 /* Swan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738AA0351AD7A1C500662281 /* Swan.framework */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		7328B4BD1B1EBE99001408FD /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		7328B4BF1B1EBF9D001408FD /* UICollectionViewExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensionTests.swift; sourceTree = "<group>"; };
+		733819AB1B1F17EC0066EF89 /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		734E72F11B09B80A009346D3 /* ExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionsTests.swift; sourceTree = "<group>"; };
 		738AA0351AD7A1C500662281 /* Swan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		738AA0391AD7A1C500662281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				73D523F21B12EA0000E98FDB /* IntExtension.swift */,
 				73D523DD1B0F255F00E98FDB /* CGFloatExtension.swift */,
 				7328B4BD1B1EBE99001408FD /* UICollectionViewExtension.swift */,
+				733819AB1B1F17EC0066EF89 /* UILabelExtension.swift */,
 			);
 			path = Swan;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				73D523F31B12EA0000E98FDB /* IntExtension.swift in Sources */,
 				73D523E21B0F2B5E00E98FDB /* UIColorExtension.swift in Sources */,
 				73D523DE1B0F255F00E98FDB /* CGFloatExtension.swift in Sources */,
+				733819AC1B1F17EC0066EF89 /* UILabelExtension.swift in Sources */,
 				738AA0521AD7A1EE00662281 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
