@@ -13,27 +13,27 @@ import Foundation
 public extension Int {
     
     var seconds: TimeUnit {
-        return TimeUnit(.CalendarUnitSecond, duration: self)
+        return TimeUnit(.Second, duration: self)
     }
     
     var minutes: TimeUnit {
-        return TimeUnit(.CalendarUnitMinute, duration: self)
+        return TimeUnit(.Minute, duration: self)
     }
     
     var hours: TimeUnit {
-        return TimeUnit(.CalendarUnitHour, duration: self)
+        return TimeUnit(.Hour, duration: self)
     }
     
     var days: TimeUnit {
-        return TimeUnit(.CalendarUnitDay, duration: self)
+        return TimeUnit(.Day, duration: self)
     }
     
     var months: TimeUnit {
-        return TimeUnit(.CalendarUnitMonth, duration: self)
+        return TimeUnit(.Month, duration: self)
     }
     
     var years: TimeUnit {
-        return TimeUnit(.CalendarUnitYear, duration: self)
+        return TimeUnit(.Year, duration: self)
     }
     
 }

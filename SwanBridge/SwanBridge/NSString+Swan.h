@@ -21,6 +21,6 @@ typedef NS_ENUM(NSInteger, SwanHashFunction) {
 
 @interface NSString (Swan)
 
-- (NSString *)digestUsingHashFunction:(SwanHashFunction)hashFunction;
+- (NSString * __nonnull)digestUsingHashFunction:(SwanHashFunction)hashFunction;
 
 @end

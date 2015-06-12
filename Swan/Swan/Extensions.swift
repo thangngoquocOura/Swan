@@ -14,11 +14,11 @@ public extension NSLocale {
 
     /// Returns the preferred locale taking into account device locale settings and supported application localizations.
     class func preferredLocale() -> NSLocale {
-        let preferredLanguages = NSLocale.preferredLanguages() as! [NSString]
-        let preferredLocalizations = NSBundle.mainBundle().localizations as! [NSString]
+        let preferredLanguages = NSLocale.preferredLanguages()
+        let preferredLocalizations = NSBundle.mainBundle().localizations
         for preferredLanguage in preferredLanguages {
-            if contains(preferredLocalizations, preferredLanguage) {
-                return NSLocale(localeIdentifier: preferredLanguage as String)
+            if preferredLocalizations.contains(preferredLanguage) {
+                return NSLocale(localeIdentifier: preferredLanguage)
             }
         }
         return NSLocale.currentLocale()

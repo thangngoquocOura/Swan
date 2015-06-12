@@ -13,7 +13,7 @@ import XCTest
 class CGRectExtensionTests: XCTestCase {
     
     func testShorthands() {
-        var r = CGRect(5, 10, 15, 10)
+        let r = CGRect(5, 10, 15, 10)
         XCTAssertTrue(r.x == 5 && r.y == 10 && r.width == 15 && r.height == 10)
     }
     

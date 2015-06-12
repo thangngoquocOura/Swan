@@ -21,7 +21,7 @@ public extension UIColor {
         
         let scanner = NSScanner(string: hex)
         var value: UInt64 = 0
-        if count(hex) == 6 && scanner.scanHexLongLong(&value) {
+        if hex.utf8.count == 6 && scanner.scanHexLongLong(&value) {
             r = (value & 0xFF0000) >> 16
             g = (value & 0x00FF00) >> 8
             b = (value & 0x0000FF)
