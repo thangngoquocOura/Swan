@@ -12,6 +12,7 @@
 		733819AC1B1F17EC0066EF89 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733819AB1B1F17EC0066EF89 /* UILabelExtension.swift */; };
 		733819AE1B1F1C300066EF89 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733819AD1B1F1C300066EF89 /* DoubleExtension.swift */; };
 		734E72F21B09B80A009346D3 /* ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734E72F11B09B80A009346D3 /* ExtensionsTests.swift */; };
+		7352A4901B3012AD00719626 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7352A48F1B3012AD00719626 /* UITableViewExtensions.swift */; };
 		738AA03B1AD7A1C500662281 /* Swan.h in Headers */ = {isa = PBXBuildFile; fileRef = 738AA03A1AD7A1C500662281 /* Swan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		738AA0411AD7A1C500662281 /* Swan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738AA0351AD7A1C500662281 /* Swan.framework */; };
 		738AA0521AD7A1EE00662281 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738AA0511AD7A1EE00662281 /* Extensions.swift */; };
@@ -44,6 +45,7 @@
 		733819AB1B1F17EC0066EF89 /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		733819AD1B1F1C300066EF89 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		734E72F11B09B80A009346D3 /* ExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionsTests.swift; sourceTree = "<group>"; };
+		7352A48F1B3012AD00719626 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		738AA0351AD7A1C500662281 /* Swan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		738AA0391AD7A1C500662281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		738AA03A1AD7A1C500662281 /* Swan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Swan.h; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				738AA03A1AD7A1C500662281 /* Swan.h */,
 				738AA0381AD7A1C500662281 /* Supporting Files */,
 				738AA0511AD7A1EE00662281 /* Extensions.swift */,
+				7352A48F1B3012AD00719626 /* UITableViewExtensions.swift */,
 				733819AD1B1F1C300066EF89 /* DoubleExtension.swift */,
 				73D523E71B0F30B800E98FDB /* CGRectExtensions.swift */,
 				73D523E91B0F314600E98FDB /* UIViewExtensions.swift */,
@@ -261,6 +264,7 @@
 				733819AE1B1F1C300066EF89 /* DoubleExtension.swift in Sources */,
 				73D523E41B0F2B9200E98FDB /* NSCalendarExtension.swift in Sources */,
 				73D523E01B0F2B1500E98FDB /* NSDateExtension.swift in Sources */,
+				7352A4901B3012AD00719626 /* UITableViewExtensions.swift in Sources */,
 				73D523EA1B0F314600E98FDB /* UIViewExtensions.swift in Sources */,
 				73D523E81B0F30B800E98FDB /* CGRectExtensions.swift in Sources */,
 				7328B4BE1B1EBE99001408FD /* UICollectionViewExtension.swift in Sources */,
