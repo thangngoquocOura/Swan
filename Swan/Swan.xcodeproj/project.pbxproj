@@ -14,6 +14,7 @@
 		734E72F21B09B80A009346D3 /* ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734E72F11B09B80A009346D3 /* ExtensionsTests.swift */; };
 		7352A4901B3012AD00719626 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7352A48F1B3012AD00719626 /* UITableViewExtensions.swift */; };
 		73727A871B32E7E200ED6FCE /* UIBezierPathExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73727A861B32E7E200ED6FCE /* UIBezierPathExtensions.swift */; };
+		737D38EA1B395BD20026B3C1 /* CGFloatConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737D38E91B395BD20026B3C1 /* CGFloatConvertible.swift */; };
 		738AA03B1AD7A1C500662281 /* Swan.h in Headers */ = {isa = PBXBuildFile; fileRef = 738AA03A1AD7A1C500662281 /* Swan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		738AA0411AD7A1C500662281 /* Swan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738AA0351AD7A1C500662281 /* Swan.framework */; };
 		738AA0521AD7A1EE00662281 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738AA0511AD7A1EE00662281 /* Extensions.swift */; };
@@ -48,6 +49,7 @@
 		734E72F11B09B80A009346D3 /* ExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionsTests.swift; sourceTree = "<group>"; };
 		7352A48F1B3012AD00719626 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		73727A861B32E7E200ED6FCE /* UIBezierPathExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBezierPathExtensions.swift; sourceTree = "<group>"; };
+		737D38E91B395BD20026B3C1 /* CGFloatConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloatConvertible.swift; sourceTree = "<group>"; };
 		738AA0351AD7A1C500662281 /* Swan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		738AA0391AD7A1C500662281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		738AA03A1AD7A1C500662281 /* Swan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Swan.h; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				738AA0381AD7A1C500662281 /* Supporting Files */,
 				738AA0511AD7A1EE00662281 /* Extensions.swift */,
 				7352A48F1B3012AD00719626 /* UITableViewExtensions.swift */,
+				737D38E91B395BD20026B3C1 /* CGFloatConvertible.swift */,
 				733819AD1B1F1C300066EF89 /* DoubleExtension.swift */,
 				73D523E71B0F30B800E98FDB /* CGRectExtensions.swift */,
 				73D523E91B0F314600E98FDB /* UIViewExtensions.swift */,
@@ -275,6 +278,7 @@
 				73D523F31B12EA0000E98FDB /* IntExtension.swift in Sources */,
 				73D523E21B0F2B5E00E98FDB /* UIColorExtension.swift in Sources */,
 				73D523DE1B0F255F00E98FDB /* CGFloatExtension.swift in Sources */,
+				737D38EA1B395BD20026B3C1 /* CGFloatConvertible.swift in Sources */,
 				733819AC1B1F17EC0066EF89 /* UILabelExtension.swift in Sources */,
 				738AA0521AD7A1EE00662281 /* Extensions.swift in Sources */,
 				73727A871B32E7E200ED6FCE /* UIBezierPathExtensions.swift in Sources */,

@@ -16,7 +16,7 @@ class UICollectionViewExtensionTests: XCTestCase {
         class Cell: UICollectionViewCell { }
         class Header: UICollectionReusableView { }
         class Footer: UICollectionReusableView { }
-        let collectionView = UICollectionView(frame: CGRect(0, 0, 10, 10), collectionViewLayout: UICollectionViewFlowLayout())
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 10, height: 10), collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.registerCell(Cell.self)
         collectionView.registerSectionHeader(Header)
         collectionView.registerSectionFooter(Footer)

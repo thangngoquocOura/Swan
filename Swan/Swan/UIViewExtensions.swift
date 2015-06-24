@@ -11,7 +11,15 @@ import UIKit
 
 public extension UIView {
     
-    var x: CGFloat {
+    final func snapshotAfterScreenUpdates(afterScreenUpdates: Bool) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, opaque, 0)
+        drawViewHierarchyInRect(bounds, afterScreenUpdates: afterScreenUpdates)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+
+    final var x: CGFloat {
         get {
             return frame.x
         }
@@ -20,7 +28,7 @@ public extension UIView {
         }
     }
     
-    var y: CGFloat {
+    final var y: CGFloat {
         get {
             return frame.y
         }
@@ -29,7 +37,7 @@ public extension UIView {
         }
     }
     
-    var width: CGFloat {
+    final var width: CGFloat {
         get {
             return frame.width
         }
@@ -38,7 +46,7 @@ public extension UIView {
         }
     }
     
-    var height: CGFloat {
+    final var height: CGFloat {
         get {
             return frame.height
         }

@@ -24,37 +24,37 @@ public func <(lhs: NSDate, rhs: NSDate) -> Bool {
 
 public extension NSDate {
     
-    var second: Int {
+    final var second: Int {
         return NSCalendar.mainThreadSharedCalendar().component(.Second, fromDate: self)
     }
     
-    var minute: Int {
+    final var minute: Int {
         return NSCalendar.mainThreadSharedCalendar().component(.Minute, fromDate: self)
     }
     
-    var hour: Int {
+    final var hour: Int {
         return NSCalendar.mainThreadSharedCalendar().component(.Hour, fromDate: self)
     }
     
-    var day: Int {
+    final var day: Int {
         return NSCalendar.mainThreadSharedCalendar().component(.Day, fromDate: self)
     }
     
-    var month: Int {
+    final var month: Int {
         return NSCalendar.mainThreadSharedCalendar().component(.Month, fromDate: self)
     }
     
-    var year: Int {
+    final var year: Int {
         return NSCalendar.mainThreadSharedCalendar().component(.Year, fromDate: self)
     }
     
-    func midnight() -> NSDate {
+    final func midnight() -> NSDate {
         let calendar = NSCalendar.mainThreadSharedCalendar()
         let comps = calendar.components([.Year, .Month, .Day], fromDate: self)
         return calendar.dateFromComponents(comps)!
     }
     
-    func noon() -> NSDate {
+    final func noon() -> NSDate {
         let calendar = NSCalendar.mainThreadSharedCalendar()
         let comps = calendar.components([.Year, .Month, .Day], fromDate: self)
         comps.hour = 12

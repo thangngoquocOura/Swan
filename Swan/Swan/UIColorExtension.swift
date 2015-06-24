@@ -33,7 +33,7 @@ public extension UIColor {
         }
     }
     
-    var rgba: [CGFloat] {
+    final var rgba: [CGFloat] {
         var r: CGFloat = 0
         var g: CGFloat = 0
         var b: CGFloat = 0
@@ -42,35 +42,35 @@ public extension UIColor {
         return [r, g, b, a]
     }
     
-    var red: CGFloat {
+    final var red: CGFloat {
         return rgba[0]
     }
     
-    var red8: UInt8 {
+    final var red8: UInt8 {
         return UInt8(self.red * 255)
     }
     
-    var green: CGFloat {
+    final var green: CGFloat {
         return rgba[1]
     }
     
-    var green8: UInt8 {
+    final var green8: UInt8 {
         return UInt8(self.green * 255)
     }
     
-    var blue: CGFloat {
+    final var blue: CGFloat {
         return rgba[2]
     }
     
-    var blue8: UInt8 {
+    final var blue8: UInt8 {
         return UInt8(self.blue * 255)
     }
     
-    var alpha: CGFloat {
+    final var alpha: CGFloat {
         return rgba[3]
     }
     
-    var alpha8: UInt8 {
+    final var alpha8: UInt8 {
         return UInt8(self.alpha * 255)
     }
     

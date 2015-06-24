@@ -11,11 +11,18 @@ import UIKit
 
 public extension UILabel {
     
-    func sizeHeightToFit() {
+    final func sizeHeightToFit() {
         var frame = self.frame;
-        self.sizeToFit()
-        frame.size.width = self.width
+        sizeToFit()
+        frame.size.height = self.frame.size.height
         self.frame = frame
     }
     
+    final func sizeWidthToFit() {
+        var frame = self.frame
+        sizeToFit()
+        frame.size.width = self.frame.size.width
+        self.frame = frame
+    }
+
 }
