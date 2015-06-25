@@ -13,6 +13,7 @@
 		733819AE1B1F1C300066EF89 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733819AD1B1F1C300066EF89 /* DoubleExtension.swift */; };
 		734E72F21B09B80A009346D3 /* ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734E72F11B09B80A009346D3 /* ExtensionsTests.swift */; };
 		7352A4901B3012AD00719626 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7352A48F1B3012AD00719626 /* UITableViewExtensions.swift */; };
+		73655B891B3C0A2A005C31A7 /* NSLocaleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73655B881B3C0A2A005C31A7 /* NSLocaleExtension.swift */; };
 		73727A871B32E7E200ED6FCE /* UIBezierPathExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73727A861B32E7E200ED6FCE /* UIBezierPathExtensions.swift */; };
 		737D38EA1B395BD20026B3C1 /* CGFloatConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737D38E91B395BD20026B3C1 /* CGFloatConvertible.swift */; };
 		738AA03B1AD7A1C500662281 /* Swan.h in Headers */ = {isa = PBXBuildFile; fileRef = 738AA03A1AD7A1C500662281 /* Swan.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -48,6 +49,7 @@
 		733819AD1B1F1C300066EF89 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		734E72F11B09B80A009346D3 /* ExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionsTests.swift; sourceTree = "<group>"; };
 		7352A48F1B3012AD00719626 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
+		73655B881B3C0A2A005C31A7 /* NSLocaleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLocaleExtension.swift; sourceTree = "<group>"; };
 		73727A861B32E7E200ED6FCE /* UIBezierPathExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBezierPathExtensions.swift; sourceTree = "<group>"; };
 		737D38E91B395BD20026B3C1 /* CGFloatConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloatConvertible.swift; sourceTree = "<group>"; };
 		738AA0351AD7A1C500662281 /* Swan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +122,7 @@
 				73D523E71B0F30B800E98FDB /* CGRectExtensions.swift */,
 				73D523E91B0F314600E98FDB /* UIViewExtensions.swift */,
 				73D523E11B0F2B5E00E98FDB /* UIColorExtension.swift */,
+				73655B881B3C0A2A005C31A7 /* NSLocaleExtension.swift */,
 				73D523E31B0F2B9200E98FDB /* NSCalendarExtension.swift */,
 				73D523D91B0F14E900E98FDB /* StringExtension.swift */,
 				73D523DF1B0F2B1500E98FDB /* NSDateExtension.swift */,
@@ -267,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73655B891B3C0A2A005C31A7 /* NSLocaleExtension.swift in Sources */,
 				733819AE1B1F1C300066EF89 /* DoubleExtension.swift in Sources */,
 				73D523E41B0F2B9200E98FDB /* NSCalendarExtension.swift in Sources */,
 				73D523E01B0F2B1500E98FDB /* NSDateExtension.swift in Sources */,
