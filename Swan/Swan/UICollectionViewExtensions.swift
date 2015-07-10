@@ -1,5 +1,5 @@
 //
-//  UICollectionViewExtension.swift
+//  UICollectionViewExtensions.swift
 //  Swan
 //
 //  Created by Antti Laitala on 03/06/15.

@@ -1,5 +1,5 @@
 //
-//  CGFloatExtension.swift
+//  CGFloatExtensions.swift
 //  Swan
 //
 //  Created by Antti Laitala on 22/05/15.

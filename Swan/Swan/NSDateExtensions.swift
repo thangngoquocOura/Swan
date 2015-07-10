@@ -1,5 +1,5 @@
 //
-//  NSDateExtension.swift
+//  NSDateExtensions.swift
 //  Swan
 //
 //  Created by Antti Laitala on 22/05/15.

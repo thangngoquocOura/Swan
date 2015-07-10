@@ -9,6 +9,27 @@
 import Foundation
 import SwanBridge
 
+public extension String {
+    
+    /// Returns a string object containing the characters of the `String` that lie within a given range.
+    subscript(subRange: Range<Int>) -> String {
+        return substringWithRange(Range<Index>(start: advance(startIndex, subRange.startIndex), end: advance(startIndex, subRange.endIndex)))
+    }
+    
+    /// Remove the indicated `subRange` of characters.
+    ///
+    /// Invalidates all indices with respect to `self`.
+    ///
+    /// - Complexity: O(`self.count`).
+    /// - Returns: String that was removed
+    mutating func removeRange(subRange: Range<Int>) -> String {
+        let removed = self[subRange]
+        removeRange(Range(start: advance(startIndex, subRange.startIndex), end: advance(startIndex, subRange.endIndex)))
+        return removed
+    }
+    
+}
+
 // MARK: Hashing
 
 public extension String {

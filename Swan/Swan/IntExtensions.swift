@@ -1,5 +1,5 @@
 //
-//  IntExtension.swift
+//  IntExtensions.swift
 //  Swan
 //
 //  Created by Antti Laitala on 25/05/15.
