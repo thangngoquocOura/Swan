@@ -61,6 +61,15 @@ public extension NSDate {
         return calendar.dateFromComponents(comps)!
     }
     
+    final func calendarDaysToDate(date: NSDate) -> Int {
+        let calendar = NSCalendar.mainThreadSharedCalendar()
+        var fromDate: NSDate?
+        var toDate: NSDate?
+        calendar.rangeOfUnit(NSCalendarUnit.Day, startDate: &fromDate, interval: nil, forDate: self)
+        calendar.rangeOfUnit(NSCalendarUnit.Day, startDate: &toDate, interval: nil, forDate: date)
+        return calendar.components(NSCalendarUnit.Day, fromDate: fromDate!, toDate: toDate!, options: NSCalendarOptions()).day
+    }
+    
 }
 
 // MARK: Date Arithmetic

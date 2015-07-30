@@ -11,6 +11,7 @@
 		7328B4C01B1EBF9D001408FD /* UICollectionViewExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7328B4BF1B1EBF9D001408FD /* UICollectionViewExtensionsTests.swift */; };
 		733819AC1B1F17EC0066EF89 /* UILabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733819AB1B1F17EC0066EF89 /* UILabelExtensions.swift */; };
 		733819AE1B1F1C300066EF89 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733819AD1B1F1C300066EF89 /* DoubleExtensions.swift */; };
+		734A710A1B6A8DF800D22A15 /* NSDateExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A71091B6A8DF800D22A15 /* NSDateExtensionsTests.swift */; };
 		734E72F21B09B80A009346D3 /* ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734E72F11B09B80A009346D3 /* ExtensionsTests.swift */; };
 		7352A4901B3012AD00719626 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7352A48F1B3012AD00719626 /* UITableViewExtensions.swift */; };
 		735D6C7E1B4EF756008BF614 /* NotificationCenterProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735D6C7D1B4EF756008BF614 /* NotificationCenterProxy.swift */; };
@@ -51,6 +52,7 @@
 		7328B4BF1B1EBF9D001408FD /* UICollectionViewExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensionsTests.swift; sourceTree = "<group>"; };
 		733819AB1B1F17EC0066EF89 /* UILabelExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtensions.swift; sourceTree = "<group>"; };
 		733819AD1B1F1C300066EF89 /* DoubleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
+		734A71091B6A8DF800D22A15 /* NSDateExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensionsTests.swift; sourceTree = "<group>"; };
 		734E72F11B09B80A009346D3 /* ExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionsTests.swift; sourceTree = "<group>"; };
 		7352A48F1B3012AD00719626 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		735D6C7D1B4EF756008BF614 /* NotificationCenterProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCenterProxy.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				734E72F11B09B80A009346D3 /* ExtensionsTests.swift */,
 				735D6C841B4F7DDD008BF614 /* ArrayExtensionsTests.swift */,
+				734A71091B6A8DF800D22A15 /* NSDateExtensionsTests.swift */,
 				735D6C7F1B4EF802008BF614 /* NotificationCenterProxyTests.swift */,
 				73D523EE1B0F336D00E98FDB /* CGRectExtensionsTests.swift */,
 				73D523DB1B0F154400E98FDB /* StringExtensionsTests.swift */,
@@ -319,6 +322,7 @@
 				735D6C851B4F7DDD008BF614 /* ArrayExtensionsTests.swift in Sources */,
 				7328B4C01B1EBF9D001408FD /* UICollectionViewExtensionsTests.swift in Sources */,
 				73D523EF1B0F336D00E98FDB /* CGRectExtensionsTests.swift in Sources */,
+				734A710A1B6A8DF800D22A15 /* NSDateExtensionsTests.swift in Sources */,
 				73D523DC1B0F154400E98FDB /* StringExtensionsTests.swift in Sources */,
 				734E72F21B09B80A009346D3 /* ExtensionsTests.swift in Sources */,
 			);
