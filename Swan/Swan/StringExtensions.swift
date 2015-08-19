@@ -10,6 +10,16 @@ import Foundation
 import SwanBridge
 
 public extension String {
+
+    /// Returns the uppercase representation of this string taking into account the current app locale.
+    var upcase: String {
+        return uppercaseStringWithLocale(NSLocale.appLocale())
+    }
+    
+    /// Returns the downcase representation of this string taking into account the current app locale.
+    var downcase: String {
+        return lowercaseStringWithLocale(NSLocale.appLocale())
+    }
     
     /// Returns a string object containing the characters of the `String` that lie within a given range.
     subscript(subRange: Range<Int>) -> String {
