@@ -15,7 +15,7 @@ class ArrayExtensionsTests: XCTestCase {
     func testHex() {
         let bytes: [UInt8] = [0x30, 0xA5, 0xBC]
         XCTAssert(bytes.hex() == "0x30 0xA5 0xBC")
-        XCTAssert(bytes.hex(format: "%02x", joiner: ", ") == "30, a5, bc")
+        XCTAssert(bytes.hex(format: "%02x", separator: ", ") == "30, a5, bc")
     }
     
 }

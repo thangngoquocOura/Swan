@@ -23,7 +23,7 @@ public extension String {
     
     /// Returns a string object containing the characters of the `String` that lie within a given range.
     subscript(subRange: Range<Int>) -> String {
-        return substringWithRange(Range<Index>(start: advance(startIndex, subRange.startIndex), end: advance(startIndex, subRange.endIndex)))
+        return substringWithRange(Range<Index>(start: startIndex.advancedBy(subRange.startIndex), end: startIndex.advancedBy(subRange.endIndex)))
     }
     
     /// Remove the indicated `subRange` of characters.
@@ -34,7 +34,7 @@ public extension String {
     /// - Returns: String that was removed
     mutating func removeRange(subRange: Range<Int>) -> String {
         let removed = self[subRange]
-        removeRange(Range(start: advance(startIndex, subRange.startIndex), end: advance(startIndex, subRange.endIndex)))
+        removeRange(Range(start: startIndex.advancedBy(subRange.startIndex), end: startIndex.advancedBy(subRange.endIndex)))
         return removed
     }
     
