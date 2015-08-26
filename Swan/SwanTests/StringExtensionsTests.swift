@@ -31,4 +31,14 @@ class StringExtensionsTests: XCTestCase {
         XCTAssert("漢字".sha512() == "bdb254558fa95a87b7671f7c9f5bfe0f91f6adbe7186b71a73dab1ef696a57617b993ef060f1fef6e426c07237df0ead9df8fc1acf86eb75afd36d528cb105a3")
     }
 
+    class Foo {
+        
+        dynamic var i = ""
+        
+    }
+    
+    func testFoo() {
+        
+    }
+
 }
