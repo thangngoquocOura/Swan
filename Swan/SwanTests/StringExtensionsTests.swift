@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Swan
 import XCTest
 
 class StringExtensionsTests: XCTestCase {
@@ -31,14 +32,38 @@ class StringExtensionsTests: XCTestCase {
         XCTAssert("漢字".sha512() == "bdb254558fa95a87b7671f7c9f5bfe0f91f6adbe7186b71a73dab1ef696a57617b993ef060f1fef6e426c07237df0ead9df8fc1acf86eb75afd36d528cb105a3")
     }
 
-    class Foo {
+    func testReplace() {
+        var result = try! "foo bar foo".gsub("^foo", replacement: "")
+        XCTAssert(result == " bar foo")
+        result = try! "foo bar foo".gsub("^foo|foo$", replacement: "")
+        XCTAssert(result == " bar ")
+        result = try! "Foo bar FOO".gsub("(?i:^foo|foo$)", replacement: "")
+        XCTAssert(result == " bar ")
         
-        dynamic var i = ""
-        
+        result = try! "foo FOO bar BAR baz BAZ".gsub("(\\w+)") {
+            match in
+            if match == "FOO" {
+                return "_"
+            } else if match == "baz" {
+                return "."
+            }
+            return match
+        }
+        XCTAssert(result == "foo _ bar BAR . BAZ")
     }
     
-    func testFoo() {
+    func testMatches() {
+        let string = "foo bar foo"
+        var result = try! string.match(".")
+        XCTAssert(result.count == string.characters.count && result.joinWithSeparator("") == string)
+        XCTAssert(try! string.match("Foo").isEmpty)
+        result = try! string.match("(f|b)")
+        XCTAssert(result.count == 3 && result[0] == "f" && result[1] == "b" && result[2] == "f")
         
+        let html = "<br/><BR>This<b >is</b> <> <i>a test<  /i > > <BR />:>"
+        let matches = try! html.match("(?i:<(?!br\\s*/?>)[^<>]+>)")
+        print(matches)
+        XCTAssert(matches.count == 4 && matches[0] == "<b >" && matches[1] == "</b>" && matches[2] == "<i>" && matches[3] == "<  /i >")
     }
 
 }

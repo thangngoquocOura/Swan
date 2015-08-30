@@ -25,7 +25,12 @@ public extension String {
     subscript(subRange: Range<Int>) -> String {
         return substringWithRange(Range<Index>(start: startIndex.advancedBy(subRange.startIndex), end: startIndex.advancedBy(subRange.endIndex)))
     }
-    
+
+    /// Returns a string object containing the characters of the `String` that lie within a given range.
+    subscript(subRange: NSRange) -> String {
+        return substringWithRange(Range<Index>(start: startIndex.advancedBy(subRange.location), end: startIndex.advancedBy(subRange.location + subRange.length)))
+    }
+
     /// Remove the indicated `subRange` of characters.
     ///
     /// Invalidates all indices with respect to `self`.
@@ -77,3 +82,53 @@ public extension String {
     }
     
 }
+
+// MARK: Regex
+
+public extension String {
+    
+    func match(pattern: String) throws -> [String] {
+        let regexp = try createRegexWithPattern(pattern)
+        let matches = regexp.matchesInString(self, options: NSMatchingOptions(), range: NSMakeRange(0, characters.count))
+        var results = [String]()
+        for match in matches {
+            results.append(self[match.range])
+        }
+        return results
+    }
+    
+    func gsub(pattern: String, replacement: String) throws -> String {
+        let regexp = try createRegexWithPattern(pattern)
+        return regexp.stringByReplacingMatchesInString(self, options: NSMatchingOptions(), range: NSMakeRange(0, characters.count), withTemplate: replacement)
+    }
+    
+    func gsub(pattern: String, replacementClosure: (String) -> (String)) throws -> String {
+        let regexp = try createRegexWithPattern(pattern)
+        let matches = regexp.matchesInString(self, options: NSMatchingOptions(), range: NSMakeRange(0, characters.count))
+        var result = ""
+        var idx = 0
+        for match in matches {
+            let replacement = replacementClosure(self[match.range])
+            // Insert unmodified content.
+            result += self[idx..<match.range.location]
+            // Replace modified content.
+            result += replacement
+            idx = match.range.location + match.range.length
+        }
+        result += self[idx..<characters.count]
+        return result
+    }
+
+    static private var regexpCache = [String: NSRegularExpression]()
+
+    private func createRegexWithPattern(pattern: String) throws -> NSRegularExpression {
+        var regexp: NSRegularExpression? = String.regexpCache[pattern]
+        if regexp == nil {
+            regexp = try NSRegularExpression(pattern: pattern, options: NSRegularExpressionOptions())
+            String.regexpCache[pattern] = regexp
+        }
+        return regexp!
+    }
+    
+}
+
