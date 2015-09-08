@@ -60,10 +60,13 @@ class StringExtensionsTests: XCTestCase {
         result = try! string.match("(f|b)")
         XCTAssert(result.count == 3 && result[0] == "f" && result[1] == "b" && result[2] == "f")
         
-        let html = "<br/><BR>This<b >is</b> <> <i>a test<  /i > > <BR />:>"
-        let matches = try! html.match("(?i:<(?!br\\s*/?>)[^<>]+>)")
+        let html = "<   br  /> < br > breaking news: <br/><BR>This<b >is</b> <> <i>a test<  /i > > <BR />:>"
+        var matches = try! html.match("(?i:<(?!\\s*br\\s*/?\\s*>)[^<>]+>)")
         print(matches)
         XCTAssert(matches.count == 4 && matches[0] == "<b >" && matches[1] == "</b>" && matches[2] == "<i>" && matches[3] == "<  /i >")
+        
+        matches = try! html.match("(?i:(<\\s*br\\s*[/]?\\s*>))")
+        XCTAssert(matches.count == 5 && matches[0] == "<   br  />" && matches[1] == "< br >" && matches[2] == "<br/>" && matches[3] == "<BR>" && matches[4] == "<BR />")
     }
 
 }
