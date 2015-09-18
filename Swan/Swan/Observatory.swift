@@ -81,7 +81,7 @@ extension Observatory {
     private class KVOProxy: NSObject {
 
         private struct Observer {
-            unowned let object: NSObject
+            let object: NSObject
             let keyPath: String
             let closure: ClosureKVO
             
