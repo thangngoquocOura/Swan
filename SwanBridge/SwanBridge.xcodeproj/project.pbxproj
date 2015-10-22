@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		73727A841B32E60100ED6FCE /* UIBezierPath+Swan.h in Headers */ = {isa = PBXBuildFile; fileRef = 73727A821B32E60100ED6FCE /* UIBezierPath+Swan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73727A851B32E60100ED6FCE /* UIBezierPath+Swan.m in Sources */ = {isa = PBXBuildFile; fileRef = 73727A831B32E60100ED6FCE /* UIBezierPath+Swan.m */; };
+		738FB4661BD8B134006A0D6B /* UIBezierPath+Swan.h in Headers */ = {isa = PBXBuildFile; fileRef = 73727A821B32E60100ED6FCE /* UIBezierPath+Swan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73B2EAAF1AF0EA3D0026D5DB /* SwanBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 73B2EAAE1AF0EA3D0026D5DB /* SwanBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73B2EAB51AF0EA3D0026D5DB /* SwanBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B2EAA91AF0EA3D0026D5DB /* SwanBridge.framework */; };
 		73B2EABC1AF0EA3D0026D5DB /* SwanBridgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B2EABB1AF0EA3D0026D5DB /* SwanBridgeTests.m */; };
@@ -122,7 +122,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73B2EAAF1AF0EA3D0026D5DB /* SwanBridge.h in Headers */,
-				73727A841B32E60100ED6FCE /* UIBezierPath+Swan.h in Headers */,
+				738FB4661BD8B134006A0D6B /* UIBezierPath+Swan.h in Headers */,
 				73B2EAC91AF0EABD0026D5DB /* NSString+Swan.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
