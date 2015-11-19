@@ -41,8 +41,8 @@ class ExtensionsTests : XCTestCase {
     }
 
     func testCGSize() {
-        let s1 = CGSize(50, 2)
-        let s2 = CGSize(20, 40)
+        let s1 = CGSize(width: 50, height: 2)
+        let s2 = CGSize(width: 20, height: 40)
         XCTAssert(s1 + s2 == CGSize(width: s1.width + s2.width, height: s1.height + s2.height))
         XCTAssert(s1 - s2 == CGSize(width: s1.width - s2.width, height: s1.height - s2.height))
         XCTAssert(s1 * s2 == CGSize(width: s1.width * s2.width, height: s1.height * s2.height))
