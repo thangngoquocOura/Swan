@@ -10,6 +10,7 @@
 		7328B4BE1B1EBE99001408FD /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7328B4BD1B1EBE99001408FD /* UICollectionViewExtensions.swift */; };
 		7328B4C01B1EBF9D001408FD /* UICollectionViewExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7328B4BF1B1EBF9D001408FD /* UICollectionViewExtensionsTests.swift */; };
 		73343A351BFDB824007A3B0E /* CGSizeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73343A341BFDB824007A3B0E /* CGSizeExtensions.swift */; };
+		73343A371BFDBD7E007A3B0E /* SwanBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73343A361BFDBD7E007A3B0E /* SwanBridge.framework */; };
 		733819AC1B1F17EC0066EF89 /* UILabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733819AB1B1F17EC0066EF89 /* UILabelExtensions.swift */; };
 		733819AE1B1F1C300066EF89 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733819AD1B1F1C300066EF89 /* DoubleExtensions.swift */; };
 		734A710A1B6A8DF800D22A15 /* NSDateExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A71091B6A8DF800D22A15 /* NSDateExtensionsTests.swift */; };
@@ -27,7 +28,6 @@
 		737D38EA1B395BD20026B3C1 /* CGFloatConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737D38E91B395BD20026B3C1 /* CGFloatConvertible.swift */; };
 		738AA03B1AD7A1C500662281 /* Swan.h in Headers */ = {isa = PBXBuildFile; fileRef = 738AA03A1AD7A1C500662281 /* Swan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		738AA0411AD7A1C500662281 /* Swan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738AA0351AD7A1C500662281 /* Swan.framework */; };
-		73B2EAD01AF0ED020026D5DB /* SwanBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B2EACF1AF0ED020026D5DB /* SwanBridge.framework */; };
 		73D523DA1B0F14E900E98FDB /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D523D91B0F14E900E98FDB /* StringExtensions.swift */; };
 		73D523DC1B0F154400E98FDB /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D523DB1B0F154400E98FDB /* StringExtensionsTests.swift */; };
 		73D523DE1B0F255F00E98FDB /* CGFloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D523DD1B0F255F00E98FDB /* CGFloatExtensions.swift */; };
@@ -54,6 +54,7 @@
 		7328B4BD1B1EBE99001408FD /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
 		7328B4BF1B1EBF9D001408FD /* UICollectionViewExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensionsTests.swift; sourceTree = "<group>"; };
 		73343A341BFDB824007A3B0E /* CGSizeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSizeExtensions.swift; sourceTree = "<group>"; };
+		73343A361BFDBD7E007A3B0E /* SwanBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwanBridge.framework; path = "../SwanBridge/build/Debug-iphoneos/SwanBridge.framework"; sourceTree = "<group>"; };
 		733819AB1B1F17EC0066EF89 /* UILabelExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtensions.swift; sourceTree = "<group>"; };
 		733819AD1B1F1C300066EF89 /* DoubleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
 		734A71091B6A8DF800D22A15 /* NSDateExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensionsTests.swift; sourceTree = "<group>"; };
@@ -74,7 +75,6 @@
 		738AA03A1AD7A1C500662281 /* Swan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Swan.h; sourceTree = "<group>"; };
 		738AA0401AD7A1C500662281 /* SwanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		738AA0461AD7A1C500662281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		73B2EACF1AF0ED020026D5DB /* SwanBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwanBridge.framework; path = "../SwanBridge/build/Debug-iphoneos/SwanBridge.framework"; sourceTree = "<group>"; };
 		73D523D91B0F14E900E98FDB /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		73D523DB1B0F154400E98FDB /* StringExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionsTests.swift; sourceTree = "<group>"; };
 		73D523DD1B0F255F00E98FDB /* CGFloatExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloatExtensions.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73B2EAD01AF0ED020026D5DB /* SwanBridge.framework in Frameworks */,
+				73343A371BFDBD7E007A3B0E /* SwanBridge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +135,7 @@
 		738AA02B1AD7A1C500662281 = {
 			isa = PBXGroup;
 			children = (
-				73B2EACF1AF0ED020026D5DB /* SwanBridge.framework */,
+				73343A361BFDBD7E007A3B0E /* SwanBridge.framework */,
 				738AA0371AD7A1C500662281 /* Swan */,
 				738AA0441AD7A1C500662281 /* SwanTests */,
 				738AA0361AD7A1C500662281 /* Products */,

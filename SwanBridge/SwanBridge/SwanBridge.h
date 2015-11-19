@@ -16,5 +16,5 @@ FOUNDATION_EXPORT const unsigned char SwanBridgeVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <SwanBridge/PublicHeader.h>
 
-#import <SwanBridge/NSString+Swan.h>
 #import <SwanBridge/UIBezierPath+Swan.h>
+#import <SwanBridge/NSString+Swan.h>
