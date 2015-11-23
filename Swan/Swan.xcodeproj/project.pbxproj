@@ -11,6 +11,8 @@
 		7328B4C01B1EBF9D001408FD /* UICollectionViewExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7328B4BF1B1EBF9D001408FD /* UICollectionViewExtensionsTests.swift */; };
 		73343A351BFDB824007A3B0E /* CGSizeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73343A341BFDB824007A3B0E /* CGSizeExtensions.swift */; };
 		73343A371BFDBD7E007A3B0E /* SwanBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73343A361BFDBD7E007A3B0E /* SwanBridge.framework */; };
+		73343A3C1C01EFDF007A3B0E /* NSURLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73343A3B1C01EFDF007A3B0E /* NSURLExtensions.swift */; };
+		73343A3E1C01F085007A3B0E /* NSURLExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73343A3D1C01F085007A3B0E /* NSURLExtensionsTests.swift */; };
 		733819AC1B1F17EC0066EF89 /* UILabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733819AB1B1F17EC0066EF89 /* UILabelExtensions.swift */; };
 		733819AE1B1F1C300066EF89 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733819AD1B1F1C300066EF89 /* DoubleExtensions.swift */; };
 		734A710A1B6A8DF800D22A15 /* NSDateExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A71091B6A8DF800D22A15 /* NSDateExtensionsTests.swift */; };
@@ -55,6 +57,8 @@
 		7328B4BF1B1EBF9D001408FD /* UICollectionViewExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensionsTests.swift; sourceTree = "<group>"; };
 		73343A341BFDB824007A3B0E /* CGSizeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSizeExtensions.swift; sourceTree = "<group>"; };
 		73343A361BFDBD7E007A3B0E /* SwanBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwanBridge.framework; path = "../SwanBridge/build/Debug-iphoneos/SwanBridge.framework"; sourceTree = "<group>"; };
+		73343A3B1C01EFDF007A3B0E /* NSURLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLExtensions.swift; sourceTree = "<group>"; };
+		73343A3D1C01F085007A3B0E /* NSURLExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLExtensionsTests.swift; sourceTree = "<group>"; };
 		733819AB1B1F17EC0066EF89 /* UILabelExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtensions.swift; sourceTree = "<group>"; };
 		733819AD1B1F1C300066EF89 /* DoubleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
 		734A71091B6A8DF800D22A15 /* NSDateExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensionsTests.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				7352A48F1B3012AD00719626 /* UITableViewExtensions.swift */,
+				73343A3B1C01EFDF007A3B0E /* NSURLExtensions.swift */,
 				73605A561B9EE99000C17451 /* DebugExtensions.swift */,
 				73628DF51B84545A0087CEDF /* DictionaryExtensions.swift */,
 				733819AD1B1F1C300066EF89 /* DoubleExtensions.swift */,
@@ -176,6 +181,7 @@
 			children = (
 				734E72F11B09B80A009346D3 /* ExtensionsTests.swift */,
 				73628DF71B8455280087CEDF /* DictionaryExtensionsTests.swift */,
+				73343A3D1C01F085007A3B0E /* NSURLExtensionsTests.swift */,
 				735D6C841B4F7DDD008BF614 /* ArrayExtensionsTests.swift */,
 				734A71091B6A8DF800D22A15 /* NSDateExtensionsTests.swift */,
 				735D6C7F1B4EF802008BF614 /* ObservatoryTests.swift */,
@@ -302,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73343A3C1C01EFDF007A3B0E /* NSURLExtensions.swift in Sources */,
 				73655B891B3C0A2A005C31A7 /* NSLocaleExtensions.swift in Sources */,
 				733819AE1B1F1C300066EF89 /* DoubleExtensions.swift in Sources */,
 				73D523E41B0F2B9200E98FDB /* NSCalendarExtensions.swift in Sources */,
@@ -336,6 +343,7 @@
 				73D523EF1B0F336D00E98FDB /* CGRectExtensionsTests.swift in Sources */,
 				734A710A1B6A8DF800D22A15 /* NSDateExtensionsTests.swift in Sources */,
 				73D523DC1B0F154400E98FDB /* StringExtensionsTests.swift in Sources */,
+				73343A3E1C01F085007A3B0E /* NSURLExtensionsTests.swift in Sources */,
 				734E72F21B09B80A009346D3 /* ExtensionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
