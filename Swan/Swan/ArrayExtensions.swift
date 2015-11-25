@@ -16,3 +16,14 @@ public extension CollectionType where Generator.Element == UInt8 {
     }
     
 }
+
+public extension Array where Element: Equatable {
+    
+    public mutating func remove(object: Element) -> Element? {
+        if let index = indexOf(object) {
+            return removeAtIndex(index)
+        }
+        return nil
+    }
+    
+}
