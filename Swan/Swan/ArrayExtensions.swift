@@ -17,6 +17,16 @@ public extension CollectionType where Generator.Element == UInt8 {
     
 }
 
+public extension CollectionType where Index.Distance == Int {
+    
+    /// Returns a random element from the collection.
+    public final var randomElement: Self.Generator.Element {
+        let idx = Int(arc4random_uniform(UInt32(count)))
+        return self[startIndex.advancedBy(idx)]
+    }
+    
+}
+
 public extension Array where Element: Equatable {
     
     public mutating func remove(object: Element) -> Element? {
