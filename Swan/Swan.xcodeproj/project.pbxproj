@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		7328B4BE1B1EBE99001408FD /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7328B4BD1B1EBE99001408FD /* UICollectionViewExtensions.swift */; };
 		7328B4C01B1EBF9D001408FD /* UICollectionViewExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7328B4BF1B1EBF9D001408FD /* UICollectionViewExtensionsTests.swift */; };
+		732FDEDA1CE321F60034619E /* SwanBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732FDED91CE321F60034619E /* SwanBridge.framework */; };
 		73343A351BFDB824007A3B0E /* CGSizeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73343A341BFDB824007A3B0E /* CGSizeExtensions.swift */; };
-		73343A371BFDBD7E007A3B0E /* SwanBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73343A361BFDBD7E007A3B0E /* SwanBridge.framework */; };
 		73343A3C1C01EFDF007A3B0E /* NSURLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73343A3B1C01EFDF007A3B0E /* NSURLExtensions.swift */; };
 		73343A3E1C01F085007A3B0E /* NSURLExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73343A3D1C01F085007A3B0E /* NSURLExtensionsTests.swift */; };
 		733819AC1B1F17EC0066EF89 /* UILabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733819AB1B1F17EC0066EF89 /* UILabelExtensions.swift */; };
@@ -55,8 +55,8 @@
 /* Begin PBXFileReference section */
 		7328B4BD1B1EBE99001408FD /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
 		7328B4BF1B1EBF9D001408FD /* UICollectionViewExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensionsTests.swift; sourceTree = "<group>"; };
+		732FDED91CE321F60034619E /* SwanBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwanBridge.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Swan-fbbmpatbaeicaefizgntzbgzgusu/Build/Products/Debug-iphonesimulator/SwanBridge.framework"; sourceTree = "<group>"; };
 		73343A341BFDB824007A3B0E /* CGSizeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSizeExtensions.swift; sourceTree = "<group>"; };
-		73343A361BFDBD7E007A3B0E /* SwanBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwanBridge.framework; path = "../SwanBridge/build/Debug-iphoneos/SwanBridge.framework"; sourceTree = "<group>"; };
 		73343A3B1C01EFDF007A3B0E /* NSURLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLExtensions.swift; sourceTree = "<group>"; };
 		73343A3D1C01F085007A3B0E /* NSURLExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLExtensionsTests.swift; sourceTree = "<group>"; };
 		733819AB1B1F17EC0066EF89 /* UILabelExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtensions.swift; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73343A371BFDBD7E007A3B0E /* SwanBridge.framework in Frameworks */,
+				732FDEDA1CE321F60034619E /* SwanBridge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +140,7 @@
 		738AA02B1AD7A1C500662281 = {
 			isa = PBXGroup;
 			children = (
-				73343A361BFDBD7E007A3B0E /* SwanBridge.framework */,
+				732FDED91CE321F60034619E /* SwanBridge.framework */,
 				738AA0371AD7A1C500662281 /* Swan */,
 				738AA0441AD7A1C500662281 /* SwanTests */,
 				738AA0361AD7A1C500662281 /* Products */,

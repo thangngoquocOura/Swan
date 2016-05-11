@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwanBridge
 
 public extension String {
 
@@ -46,7 +47,6 @@ public extension String {
 
 // MARK: Hashing
 
-/*
 public extension String {
     
     func md2() -> String {
@@ -82,7 +82,6 @@ public extension String {
     }
     
 }
-*/
 
 // MARK: Regex
 
