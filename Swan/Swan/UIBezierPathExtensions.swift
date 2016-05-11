@@ -7,6 +7,8 @@
 //
 
 import Foundation
+
+/*
 import SwanBridge
 
 public extension UIBezierPath {
@@ -16,3 +18,4 @@ public extension UIBezierPath {
     }
     
 }
+*/
