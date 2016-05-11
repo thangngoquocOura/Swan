@@ -6,4 +6,9 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '8.0'
     s.source_files = 'Swan/Swan/*.swift'
     s.frameworks = 'SwanBridge'
+    s.authors = { 'Antti Laitala' => 'antti.o.laitala@gmail.com' }
+    s.license = { :type => 'MIT' }
+    s.homepage = 'https://github.com/anlaital/Swan'
+    s.source = { :git => 'https://github.com/anlaital/Swan.git' }
+    s.summary = 'Swift development tools'
 end
