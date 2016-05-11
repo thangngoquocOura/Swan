@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CCommonCrypto
 
 public extension String {
 
@@ -46,43 +47,86 @@ public extension String {
 
 // MARK: Hashing
 
-/*
 public extension String {
     
     func md2() -> String {
-        return (self as NSString).digestUsingHashFunction(.MD2)
+        return digestUsingHashFunction(.MD2)
     }
     
     func md4() -> String {
-        return (self as NSString).digestUsingHashFunction(.MD4)
+        return digestUsingHashFunction(.MD4)
     }
     
     func md5() -> String {
-        return (self as NSString).digestUsingHashFunction(.MD5)
+        return digestUsingHashFunction(.MD5)
     }
     
     func sha1() -> String {
-        return (self as NSString).digestUsingHashFunction(.SHA1)
+        return digestUsingHashFunction(.SHA1)
     }
     
     func sha224() -> String {
-        return (self as NSString).digestUsingHashFunction(.SHA224)
+        return digestUsingHashFunction(.SHA224)
     }
     
     func sha256() -> String {
-        return (self as NSString).digestUsingHashFunction(.SHA256)
+        return digestUsingHashFunction(.SHA256)
     }
     
     func sha384() -> String {
-        return (self as NSString).digestUsingHashFunction(.SHA384)
+        return digestUsingHashFunction(.SHA384)
     }
     
     func sha512() -> String {
-        return (self as NSString).digestUsingHashFunction(.SHA512)
+        return digestUsingHashFunction(.SHA512)
+    }
+    
+    private enum HashFunction {
+        case MD2, MD4, MD5, SHA1, SHA224, SHA256, SHA384, SHA512
+    }
+    
+    private func digestUsingHashFunction(hashFunction: HashFunction) -> String {
+        let digestLength: Int32
+        let digestFunction: (data: UnsafePointer<Void>, len: CC_LONG, md: UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8>
+        switch hashFunction {
+        case .MD2:
+            digestLength = CC_MD2_DIGEST_LENGTH
+            digestFunction = CC_MD2
+        case .MD4:
+            digestLength = CC_MD4_DIGEST_LENGTH
+            digestFunction = CC_MD4
+        case .MD5:
+            digestLength = CC_MD5_DIGEST_LENGTH
+            digestFunction = CC_MD5
+        case .SHA1:
+            digestLength = CC_SHA1_DIGEST_LENGTH
+            digestFunction = CC_SHA1
+        case .SHA224:
+            digestLength = CC_SHA224_DIGEST_LENGTH
+            digestFunction = CC_SHA224
+        case .SHA256:
+            digestLength = CC_SHA256_DIGEST_LENGTH
+            digestFunction = CC_SHA256
+        case .SHA384:
+            digestLength = CC_SHA384_DIGEST_LENGTH
+            digestFunction = CC_SHA384
+        case .SHA512:
+            digestLength = CC_SHA512_DIGEST_LENGTH
+            digestFunction = CC_SHA512
+        }
+        
+        let data = dataUsingEncoding(NSUTF8StringEncoding)!
+        var buffer = Array<UInt8>(count: Int(digestLength), repeatedValue: 0)
+        digestFunction(data: data.bytes, len: CC_LONG(data.length), md: &buffer)
+        
+        var result = ""
+        buffer.forEach {
+            result += String(format: "%02x", $0)
+        }
+        return result
     }
     
 }
-*/
 
 // MARK: Regex
 
@@ -133,3 +177,20 @@ public extension String {
     
 }
 
+/*
+@implementation NSString (Swan)
+
+- (NSString *)digestUsingHashFunction:(SwanHashFunction)hashFunction
+{
+    unsigned char digest[digestLength];
+    const char *bytes = self.UTF8String;
+    hashFunctionPtr(bytes, (CC_LONG)strlen(bytes), digest);
+    
+    NSMutableString *result = [NSMutableString stringWithCapacity:digestLength * 2];
+    for (NSUInteger i = 0; i < digestLength; ++i)
+    [result appendFormat:@"%02x", digest[i]];
+    return result;
+}
+
+@end
+*/

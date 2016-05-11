@@ -10,4 +10,7 @@ Pod::Spec.new do |s|
     s.homepage = 'https://github.com/anlaital/Swan'
     s.source = { :git => 'https://github.com/anlaital/Swan.git' }
     s.summary = 'Swift development tools'
+
+    s.xcconfig = { 'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/Swan/Swan/CCommonCrypto' }
+	s.preserve_paths = 'Swan/CCommonCrypto/module.modulemap'
 end
