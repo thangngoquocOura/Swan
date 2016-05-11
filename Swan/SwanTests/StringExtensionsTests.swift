@@ -12,6 +12,7 @@ import XCTest
 
 class StringExtensionsTests: XCTestCase {
     
+    /*
     func testHashing() {
         XCTAssert("".md2() == "8350e5a3e24c153df2275c9f80692773")
         XCTAssert("".md4() == "31d6cfe0d16ae931b73c59d7e0c089c0")
@@ -31,7 +32,8 @@ class StringExtensionsTests: XCTestCase {
         XCTAssert("漢字".sha384() == "218f3158440ec4144e223e0feec139db2004a27f4cfbbff5f7f428b8787e2306fb001430f0957ba94c5631f8f2dece15")
         XCTAssert("漢字".sha512() == "bdb254558fa95a87b7671f7c9f5bfe0f91f6adbe7186b71a73dab1ef696a57617b993ef060f1fef6e426c07237df0ead9df8fc1acf86eb75afd36d528cb105a3")
     }
-
+    */
+    
     func testReplace() {
         var result = try! "foo bar foo".gsub("^foo", replacement: "")
         XCTAssert(result == " bar foo")

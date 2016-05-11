@@ -10,7 +10,8 @@ import Foundation
 
 public extension UIColor {
     
-    convenience init?(var hex: String) {
+    convenience init?(hex: String) {
+        var hex = hex
         if (hex.hasPrefix("#")) {
             hex = hex.substringFromIndex(hex.startIndex.advancedBy(1));
         }

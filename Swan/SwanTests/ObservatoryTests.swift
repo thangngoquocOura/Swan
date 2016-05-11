@@ -27,7 +27,7 @@ class ObservatoryTests: XCTestCase {
         let notificationCenterProxy = Observatory()
         notificationCenterProxy.observeOnce("once", object: nil) {
             _ in
-            i++
+            i += 1
         }
         notificationCenter.postNotificationName("once", object: nil)
         XCTAssert(i == 1)
@@ -54,11 +54,11 @@ class ObservatoryTests: XCTestCase {
             let observer = TestObserver()
             observer.observatory.observeOnce("once", object: nil) {
                 _ in
-                i++
+                i += 1
             }
             observer.observatory.observe(nil, object: nil) {
                 _ in
-                i++
+                i += 1
             }
             notificationCenter.postNotificationName("", object: nil)
             XCTAssert(i == 1)
@@ -81,7 +81,7 @@ class ObservatoryTests: XCTestCase {
         let notificationCenterProxy = Observatory()
         let token = notificationCenterProxy.observe(nil, object: nil) {
             _ in
-            i++
+            i += 1
         }
         notificationCenter.postNotificationName("", object: nil)
         notificationCenter.postNotificationName("", object: nil)

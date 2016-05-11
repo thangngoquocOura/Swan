@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwanBridge
 
 public extension String {
 
@@ -23,12 +22,12 @@ public extension String {
     
     /// Returns a string object containing the characters of the `String` that lie within a given range.
     subscript(subRange: Range<Int>) -> String {
-        return substringWithRange(Range<Index>(start: startIndex.advancedBy(subRange.startIndex), end: startIndex.advancedBy(subRange.endIndex)))
+        return substringWithRange(startIndex.advancedBy(subRange.startIndex)..<startIndex.advancedBy(subRange.endIndex))
     }
 
     /// Returns a string object containing the characters of the `String` that lie within a given range.
     subscript(subRange: NSRange) -> String {
-        return substringWithRange(Range<Index>(start: startIndex.advancedBy(subRange.location), end: startIndex.advancedBy(subRange.location + subRange.length)))
+        return substringWithRange(startIndex.advancedBy(subRange.location)..<startIndex.advancedBy(subRange.location + subRange.length))
     }
 
     /// Remove the indicated `subRange` of characters.
@@ -39,7 +38,7 @@ public extension String {
     /// - Returns: String that was removed
     mutating func removeRange(subRange: Range<Int>) -> String {
         let removed = self[subRange]
-        removeRange(Range(start: startIndex.advancedBy(subRange.startIndex), end: startIndex.advancedBy(subRange.endIndex)))
+        removeRange(startIndex.advancedBy(subRange.startIndex)..<startIndex.advancedBy(subRange.endIndex))
         return removed
     }
     
@@ -47,6 +46,7 @@ public extension String {
 
 // MARK: Hashing
 
+/*
 public extension String {
     
     func md2() -> String {
@@ -82,6 +82,7 @@ public extension String {
     }
     
 }
+*/
 
 // MARK: Regex
 
