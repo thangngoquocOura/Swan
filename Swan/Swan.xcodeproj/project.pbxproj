@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		7328B4BE1B1EBE99001408FD /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7328B4BD1B1EBE99001408FD /* UICollectionViewExtensions.swift */; };
 		7328B4C01B1EBF9D001408FD /* UICollectionViewExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7328B4BF1B1EBF9D001408FD /* UICollectionViewExtensionsTests.swift */; };
+		732FDEF21CE3300D0034619E /* CommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732FDEE11CE32F5B0034619E /* CommonCrypto.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		732FDEFD1CE331F90034619E /* CommonCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = 732FDEF61CE331F90034619E /* CommonCrypto.h */; };
+		732FDEFE1CE331F90034619E /* CommonCrypto.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 732FDEF71CE331F90034619E /* CommonCrypto.xcconfig */; };
+		732FDEFF1CE331F90034619E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 732FDEF81CE331F90034619E /* Info.plist */; };
 		73343A351BFDB824007A3B0E /* CGSizeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73343A341BFDB824007A3B0E /* CGSizeExtensions.swift */; };
 		73343A3C1C01EFDF007A3B0E /* NSURLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73343A3B1C01EFDF007A3B0E /* NSURLExtensions.swift */; };
 		73343A3E1C01F085007A3B0E /* NSURLExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73343A3D1C01F085007A3B0E /* NSURLExtensionsTests.swift */; };
@@ -42,6 +46,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		732FDEF31CE3302F0034619E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 738AA02C1AD7A1C500662281 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 732FDEE01CE32F5B0034619E;
+			remoteInfo = CommonCrypto;
+		};
 		738AA0421AD7A1C500662281 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 738AA02C1AD7A1C500662281 /* Project object */;
@@ -54,6 +65,12 @@
 /* Begin PBXFileReference section */
 		7328B4BD1B1EBE99001408FD /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
 		7328B4BF1B1EBF9D001408FD /* UICollectionViewExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensionsTests.swift; sourceTree = "<group>"; };
+		732FDEE11CE32F5B0034619E /* CommonCrypto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonCrypto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		732FDEF61CE331F90034619E /* CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonCrypto.h; sourceTree = "<group>"; };
+		732FDEF71CE331F90034619E /* CommonCrypto.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = CommonCrypto.xcconfig; sourceTree = "<group>"; };
+		732FDEF81CE331F90034619E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		732FDEFA1CE331F90034619E /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		732FDEFC1CE331F90034619E /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		73343A341BFDB824007A3B0E /* CGSizeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSizeExtensions.swift; sourceTree = "<group>"; };
 		73343A3B1C01EFDF007A3B0E /* NSURLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLExtensions.swift; sourceTree = "<group>"; };
 		73343A3D1C01F085007A3B0E /* NSURLExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLExtensionsTests.swift; sourceTree = "<group>"; };
@@ -90,10 +107,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		732FDEDD1CE32F5B0034619E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		738AA0311AD7A1C500662281 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				732FDEF21CE3300D0034619E /* CommonCrypto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +133,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		732FDEF51CE331F90034619E /* CommonCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				732FDEF61CE331F90034619E /* CommonCrypto.h */,
+				732FDEF71CE331F90034619E /* CommonCrypto.xcconfig */,
+				732FDEF81CE331F90034619E /* Info.plist */,
+				732FDEF91CE331F90034619E /* iphoneos */,
+				732FDEFB1CE331F90034619E /* iphonesimulator */,
+			);
+			path = CommonCrypto;
+			sourceTree = SOURCE_ROOT;
+		};
+		732FDEF91CE331F90034619E /* iphoneos */ = {
+			isa = PBXGroup;
+			children = (
+				732FDEFA1CE331F90034619E /* module.modulemap */,
+			);
+			path = iphoneos;
+			sourceTree = "<group>";
+		};
+		732FDEFB1CE331F90034619E /* iphonesimulator */ = {
+			isa = PBXGroup;
+			children = (
+				732FDEFC1CE331F90034619E /* module.modulemap */,
+			);
+			path = iphonesimulator;
+			sourceTree = "<group>";
+		};
 		735D6C831B4F7C8F008BF614 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +201,7 @@
 			children = (
 				738AA0351AD7A1C500662281 /* Swan.framework */,
 				738AA0401AD7A1C500662281 /* SwanTests.xctest */,
+				732FDEE11CE32F5B0034619E /* CommonCrypto.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,6 +209,7 @@
 		738AA0371AD7A1C500662281 /* Swan */ = {
 			isa = PBXGroup;
 			children = (
+				732FDEF51CE331F90034619E /* CommonCrypto */,
 				735D6C831B4F7C8F008BF614 /* Extensions */,
 				738AA03A1AD7A1C500662281 /* Swan.h */,
 				738AA0381AD7A1C500662281 /* Supporting Files */,
@@ -200,10 +255,18 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		732FDEDE1CE32F5B0034619E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		738AA0321AD7A1C500662281 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				732FDEFD1CE331F90034619E /* CommonCrypto.h in Headers */,
 				738AA03B1AD7A1C500662281 /* Swan.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +274,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		732FDEE01CE32F5B0034619E /* CommonCrypto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 732FDEE81CE32F5B0034619E /* Build configuration list for PBXNativeTarget "CommonCrypto" */;
+			buildPhases = (
+				732FDEDC1CE32F5B0034619E /* Sources */,
+				732FDEDD1CE32F5B0034619E /* Frameworks */,
+				732FDEDE1CE32F5B0034619E /* Headers */,
+				732FDEDF1CE32F5B0034619E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CommonCrypto;
+			productName = CommonCrypto;
+			productReference = 732FDEE11CE32F5B0034619E /* CommonCrypto.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		738AA0341AD7A1C500662281 /* Swan */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 738AA04B1AD7A1C500662281 /* Build configuration list for PBXNativeTarget "Swan" */;
@@ -223,6 +304,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				732FDEF41CE3302F0034619E /* PBXTargetDependency */,
 			);
 			name = Swan;
 			productName = Swan;
@@ -256,6 +338,9 @@
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0710;
 				TargetAttributes = {
+					732FDEE01CE32F5B0034619E = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					738AA0341AD7A1C500662281 = {
 						CreatedOnToolsVersion = 6.3;
 					};
@@ -278,15 +363,25 @@
 			targets = (
 				738AA0341AD7A1C500662281 /* Swan */,
 				738AA03F1AD7A1C500662281 /* SwanTests */,
+				732FDEE01CE32F5B0034619E /* CommonCrypto */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		732FDEDF1CE32F5B0034619E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		738AA0331AD7A1C500662281 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				732FDEFF1CE331F90034619E /* Info.plist in Resources */,
+				732FDEFE1CE331F90034619E /* CommonCrypto.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +395,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		732FDEDC1CE32F5B0034619E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		738AA0301AD7A1C500662281 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -347,6 +449,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		732FDEF41CE3302F0034619E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 732FDEE01CE32F5B0034619E /* CommonCrypto */;
+			targetProxy = 732FDEF31CE3302F0034619E /* PBXContainerItemProxy */;
+		};
 		738AA0431AD7A1C500662281 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 738AA0341AD7A1C500662281 /* Swan */;
@@ -355,6 +462,47 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		732FDEE61CE32F5B0034619E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/CommonCrypto/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				"MODULEMAP_FILE[sdk=iphoneos*]" = "$(SRCROOT)/CommonCrypto/iphoneos/module.modulemap";
+				"MODULEMAP_FILE[sdk=iphonesimulator*]" = "$(SRCROOT)/CommonCrypto/iphonesimulator/module.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = fi.swan.CommonCrypto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		732FDEE71CE32F5B0034619E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/CommonCrypto/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				"MODULEMAP_FILE[sdk=iphoneos*]" = "$(SRCROOT)/CommonCrypto/iphoneos/module.modulemap";
+				"MODULEMAP_FILE[sdk=iphonesimulator*]" = "$(SRCROOT)/CommonCrypto/iphonesimulator/module.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = fi.swan.CommonCrypto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		738AA0491AD7A1C500662281 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -456,7 +604,7 @@
 				INFOPLIST_FILE = Swan/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fi.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = fi.swan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "${SRCROOT}/CCommonCrypto";
@@ -475,7 +623,7 @@
 				INFOPLIST_FILE = Swan/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fi.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = fi.swan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_DISABLE_SAFETY_CHECKS = YES;
@@ -511,6 +659,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		732FDEE81CE32F5B0034619E /* Build configuration list for PBXNativeTarget "CommonCrypto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				732FDEE61CE32F5B0034619E /* Debug */,
+				732FDEE71CE32F5B0034619E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		738AA02F1AD7A1C500662281 /* Build configuration list for PBXProject "Swan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

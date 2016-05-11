@@ -11,6 +11,10 @@ Pod::Spec.new do |s|
     s.source = { :git => 'https://github.com/anlaital/Swan.git' }
     s.summary = 'Swift development tools'
 
-    s.xcconfig = { 'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/Swan/Swan/CCommonCrypto' }
-	s.preserve_paths = 'Swan/CCommonCrypto/module.modulemap'
+    s.preserve_paths = 'CommonCrypto/*'
+    s.xcconfig = {
+        'SWIFT_INCLUDE_PATHS[sdk=iphoneos*]' => '$(SRCROOT)/Swan/CommonCrypto/iphoneos',
+        'SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]' => '$(SRCROOT)/Swan/CommonCrypto/iphonesimulator',
+        'SWIFT_INCLUDE_PATHS[sdk=macosx*]' => '$(SRCROOT)/Swan/CommonCrypto/macosx'
+    }
 end
