@@ -8,12 +8,12 @@
 
 import Foundation
 
-extension NSURL {
+extension URL {
     
     /// Returns the query items of the URL as a dictionary.
-    public final var queryItemsDict: [String: String?] {
+    public var queryItemsDict: [String: String?] {
         var dict = [String: String?]()
-        guard let comps = NSURLComponents(URL: self, resolvingAgainstBaseURL: false), items = comps.queryItems else {
+        guard let comps = URLComponents(url: self, resolvingAgainstBaseURL: false), let items = comps.queryItems else {
             return dict
         }
         items.forEach {

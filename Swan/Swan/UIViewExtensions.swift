@@ -11,12 +11,12 @@ import UIKit
 
 public extension UIView {
     
-    final func snapshotAfterScreenUpdates(afterScreenUpdates: Bool) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(bounds.size, opaque, 0)
-        drawViewHierarchyInRect(bounds, afterScreenUpdates: afterScreenUpdates)
+    final func snapshotAfterScreenUpdates(_ afterScreenUpdates: Bool) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, isOpaque, 0)
+        drawHierarchy(in: bounds, afterScreenUpdates: afterScreenUpdates)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return image
+        return image!
     }
 
     final var x: CGFloat {

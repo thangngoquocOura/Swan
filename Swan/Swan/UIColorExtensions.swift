@@ -13,16 +13,16 @@ public extension UIColor {
     convenience init?(hex: String) {
         var hex = hex
         if (hex.hasPrefix("#")) {
-            hex = hex.substringFromIndex(hex.startIndex.advancedBy(1));
+            hex = hex.substring(from: hex.index(hex.startIndex, offsetBy: 1));
         }
         
         var r: UInt64 = 0
         var g: UInt64 = 0
         var b: UInt64 = 0
         
-        let scanner = NSScanner(string: hex)
+        let scanner = Scanner(string: hex)
         var value: UInt64 = 0
-        if hex.utf8.count == 6 && scanner.scanHexLongLong(&value) {
+        if hex.utf8.count == 6 && scanner.scanHexInt64(&value) {
             r = (value & 0xFF0000) >> 16
             g = (value & 0x00FF00) >> 8
             b = (value & 0x0000FF)

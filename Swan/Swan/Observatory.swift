@@ -13,20 +13,22 @@ public final class Observatory {
     public init() { }
     
     public typealias ClosureKVO = () -> ()
-    public typealias ClosureNotificationCenter = (NSNotification) -> ()
+    public typealias ClosureNotificationCenter = (Notification) -> ()
     
     /// Registers a closure to receive KVO notifications for the specified key-path relative to the `object`.
-    public func observe(object: NSObject, keyPath: String, closure: ClosureKVO) -> String {
+    @discardableResult
+    public func observe(_ object: NSObject, keyPath: String, closure: ClosureKVO) -> String {
         let token = createToken()
         kvoProxy.observers[token] = KVOProxy.Observer(object: object, keyPath: keyPath, closure: closure)
-        object.addObserver(kvoProxy, forKeyPath: keyPath, options: [.New], context: nil)
+        object.addObserver(kvoProxy, forKeyPath: keyPath, options: [.new], context: nil)
         return token
     }
     
     /// Registers a closure to receive notifications for the specified `name` and `object`.
-    public func observe(name: String?, object: AnyObject?, closure: ClosureNotificationCenter) -> String {
+    @discardableResult
+    public func observe(_ name: String?, object: AnyObject?, closure: ClosureNotificationCenter) -> String {
         let token = createToken()
-        let observer = NSNotificationCenter.defaultCenter().addObserverForName(name, object: object, queue: nil) { note in
+        let observer = NotificationCenter.default.addObserver(forName: name.map { NSNotification.Name(rawValue: $0) }, object: object, queue: nil) { note in
             closure(note)
         }
         observers[token] = observer
@@ -34,9 +36,10 @@ public final class Observatory {
     }
     
     /// Registers a closure to receive notifications for the specified `name` and `object`. Notification is automatically removed after the first time it's fired.
-    public func observeOnce(name: String?, object: AnyObject?, closure: ClosureNotificationCenter) -> String {
+    @discardableResult
+    public func observeOnce(_ name: String?, object: AnyObject?, closure: ClosureNotificationCenter) -> String {
         let token = createToken()
-        let observer = NSNotificationCenter.defaultCenter().addObserverForName(name, object: object, queue: nil) {
+        let observer = NotificationCenter.default.addObserver(forName: name.map { NSNotification.Name(rawValue: $0) }, object: object, queue: nil) {
             [unowned self] note in
             self.removeObserverForToken(token)
             closure(note)
@@ -46,9 +49,9 @@ public final class Observatory {
     }
     
     /// Removes an observer corresponding to `observerToken`.
-    public func removeObserverForToken(token: String) {
+    public func removeObserverForToken(_ token: String) {
         if let observer = observers[token] {
-            NSNotificationCenter.defaultCenter().removeObserver(observer)
+            NotificationCenter.default.removeObserver(observer)
             observers[token] = nil
         }
         
@@ -60,15 +63,15 @@ public final class Observatory {
     
     // MARK: Private
     
-    private lazy var observers = [String: NSObjectProtocol]()
-    private lazy var kvoProxy = KVOProxy()
+    fileprivate lazy var observers = [String: NSObjectProtocol]()
+    fileprivate lazy var kvoProxy = KVOProxy()
     
-    private func createToken() -> String {
-        return NSUUID().UUIDString
+    fileprivate func createToken() -> String {
+        return UUID().uuidString
     }
     
     deinit {
-        let notificationCenter = NSNotificationCenter.defaultCenter()
+        let notificationCenter = NotificationCenter.default
         for observer in observers.values {
             notificationCenter.removeObserver(observer)
         }
@@ -78,9 +81,9 @@ public final class Observatory {
 
 extension Observatory {
 
-    private class KVOProxy: NSObject {
+    fileprivate class KVOProxy: NSObject {
 
-        private struct Observer {
+        fileprivate struct Observer {
             let object: NSObject
             let keyPath: String
             let closure: ClosureKVO
@@ -92,7 +95,7 @@ extension Observatory {
             }
         }
         
-        override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
             for observer in observers.values {
                 if observer.object == object as? NSObject && keyPath == observer.keyPath {
                     observer.closure()
@@ -106,7 +109,7 @@ extension Observatory {
             }
         }
 
-        private lazy var observers = [String: Observer]()
+        fileprivate lazy var observers = [String: Observer]()
         
     }
 

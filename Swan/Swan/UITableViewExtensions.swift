@@ -11,20 +11,20 @@ import UIKit
 
 public extension UITableView {
     
-    final func registerCell<T: UITableViewCell>(cell: T.Type) {
-        registerClass(cell, forCellReuseIdentifier: NSStringFromClass(cell))
+    final func registerCell<T: UITableViewCell>(_ cell: T.Type) {
+        register(cell, forCellReuseIdentifier: NSStringFromClass(cell))
     }
     
-    final func registerHeaderFooterView<T: UITableViewHeaderFooterView>(header: T.Type) {
-        registerClass(header, forHeaderFooterViewReuseIdentifier: NSStringFromClass(header))
+    final func registerHeaderFooterView<T: UITableViewHeaderFooterView>(_ header: T.Type) {
+        register(header, forHeaderFooterViewReuseIdentifier: NSStringFromClass(header))
     }
     
-    final func dequeueCell<T: UITableViewCell>(cell: T.Type, forIndexPath indexPath: NSIndexPath!) -> T {
-        return dequeueReusableCellWithIdentifier(NSStringFromClass(cell), forIndexPath: indexPath) as! T
+    final func dequeueCell<T: UITableViewCell>(_ cell: T.Type, forIndexPath indexPath: IndexPath!) -> T {
+        return dequeueReusableCell(withIdentifier: NSStringFromClass(cell), for: indexPath) as! T
     }
     
-    final func dequeueHeaderFooterView<T: UITableViewHeaderFooterView>(header: T.Type) -> T {
-        return dequeueReusableHeaderFooterViewWithIdentifier(NSStringFromClass(header)) as! T
+    final func dequeueHeaderFooterView<T: UITableViewHeaderFooterView>(_ header: T.Type) -> T {
+        return dequeueReusableHeaderFooterView(withIdentifier: NSStringFromClass(header)) as! T
     }
     
 }

@@ -11,14 +11,14 @@ import XCTest
 
 class ObservatoryTests: XCTestCase {
     
-    let notificationCenter = NSNotificationCenter.defaultCenter()
+    let notificationCenter = NotificationCenter.default
 
-    private class TestObserver {
+    fileprivate class TestObserver {
         let observatory = Observatory()
         var count = 0
     }
     
-    private class Observable: NSObject {
+    fileprivate class Observable: NSObject {
         dynamic var name = ""
     }
 
@@ -29,9 +29,9 @@ class ObservatoryTests: XCTestCase {
             _ in
             i += 1
         }
-        notificationCenter.postNotificationName("once", object: nil)
+        notificationCenter.post(name: Notification.Name(rawValue: "once"), object: nil)
         XCTAssert(i == 1)
-        notificationCenter.postNotificationName("once", object: nil)
+        notificationCenter.post(name: Notification.Name(rawValue: "once"), object: nil)
         XCTAssert(i == 1)
     }
     
@@ -60,10 +60,10 @@ class ObservatoryTests: XCTestCase {
                 _ in
                 i += 1
             }
-            notificationCenter.postNotificationName("", object: nil)
+            notificationCenter.post(name: Notification.Name(rawValue: ""), object: nil)
             XCTAssert(i == 1)
         }
-        notificationCenter.postNotificationName("once", object: nil)
+        notificationCenter.post(name: Notification.Name(rawValue: "once"), object: nil)
         XCTAssert(i == 1)
         
         let observable = Observable()
@@ -83,11 +83,11 @@ class ObservatoryTests: XCTestCase {
             _ in
             i += 1
         }
-        notificationCenter.postNotificationName("", object: nil)
-        notificationCenter.postNotificationName("", object: nil)
+        notificationCenter.post(name: Notification.Name(rawValue: ""), object: nil)
+        notificationCenter.post(name: Notification.Name(rawValue: ""), object: nil)
         XCTAssert(i == 2)
         notificationCenterProxy.removeObserverForToken(token)
-        notificationCenter.postNotificationName("", object: nil)
+        notificationCenter.post(name: Notification.Name(rawValue: ""), object: nil)
         XCTAssert(i == 2)
     }
     

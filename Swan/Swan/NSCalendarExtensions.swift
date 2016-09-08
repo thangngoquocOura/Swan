@@ -8,12 +8,12 @@
 
 import Foundation
 
-public extension NSCalendar {
+public extension Calendar {
     
-    final class func mainThreadSharedCalendar() -> NSCalendar {
-        assert(NSThread.currentThread() == NSThread.mainThread(), "mainThreadSharedCalendar() can only be used in the main thread but it was called from another thread named `\(NSThread.currentThread().name)!`")
+    public static func mainThreadSharedCalendar() -> Calendar {
+        assert(Thread.current == Thread.main, "mainThreadSharedCalendar() can only be used in the main thread but it was called from another thread named `\(Thread.current.name)!`")
         struct Singleton {
-            static let instance = NSCalendar.currentCalendar()
+            static let instance = Calendar.current
         }
         return Singleton.instance
     }
