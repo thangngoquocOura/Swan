@@ -11,7 +11,7 @@ import UIKit
 
 public extension UIView {
     
-    final func snapshotAfterScreenUpdates(afterScreenUpdates: Bool) -> UIImage {
+    final func snapshotAfterScreenUpdates(afterScreenUpdates: Bool) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(bounds.size, opaque, 0)
         drawViewHierarchyInRect(bounds, afterScreenUpdates: afterScreenUpdates)
         let image = UIGraphicsGetImageFromCurrentImageContext()
