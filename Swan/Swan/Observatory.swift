@@ -17,7 +17,7 @@ public final class Observatory {
     
     /// Registers a closure to receive KVO notifications for the specified key-path relative to the `object`.
     @discardableResult
-    public func observe(_ object: NSObject, keyPath: String, closure: ClosureKVO) -> String {
+    public func observe(_ object: NSObject, keyPath: String, closure: @escaping ClosureKVO) -> String {
         let token = createToken()
         kvoProxy.observers[token] = KVOProxy.Observer(object: object, keyPath: keyPath, closure: closure)
         object.addObserver(kvoProxy, forKeyPath: keyPath, options: [.new], context: nil)
@@ -26,7 +26,7 @@ public final class Observatory {
     
     /// Registers a closure to receive notifications for the specified `name` and `object`.
     @discardableResult
-    public func observe(_ name: String?, object: AnyObject?, closure: ClosureNotificationCenter) -> String {
+    public func observe(_ name: String?, object: AnyObject?, closure: @escaping ClosureNotificationCenter) -> String {
         let token = createToken()
         let observer = NotificationCenter.default.addObserver(forName: name.map { NSNotification.Name(rawValue: $0) }, object: object, queue: nil) { note in
             closure(note)
@@ -37,7 +37,7 @@ public final class Observatory {
     
     /// Registers a closure to receive notifications for the specified `name` and `object`. Notification is automatically removed after the first time it's fired.
     @discardableResult
-    public func observeOnce(_ name: String?, object: AnyObject?, closure: ClosureNotificationCenter) -> String {
+    public func observeOnce(_ name: String?, object: AnyObject?, closure: @escaping ClosureNotificationCenter) -> String {
         let token = createToken()
         let observer = NotificationCenter.default.addObserver(forName: name.map { NSNotification.Name(rawValue: $0) }, object: object, queue: nil) {
             [unowned self] note in
@@ -88,7 +88,7 @@ extension Observatory {
             let keyPath: String
             let closure: ClosureKVO
             
-            init(object: NSObject, keyPath: String, closure: ClosureKVO) {
+            init(object: NSObject, keyPath: String, closure: @escaping ClosureKVO) {
                 self.object = object
                 self.keyPath = keyPath
                 self.closure = closure
