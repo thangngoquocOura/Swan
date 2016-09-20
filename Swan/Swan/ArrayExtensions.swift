@@ -17,10 +17,10 @@ public extension Collection where Iterator.Element == UInt8 {
     
 }
 
-public extension Array {
+public extension Collection where Index == Int {
     
     /// Returns a random element from the array, or `nil` if the array is empty.
-    public func random() -> Element? {
+    public func random() -> Iterator.Element? {
         if isEmpty { return nil }
         return self[Int(arc4random_uniform(UInt32(count.toIntMax())))]
     }
