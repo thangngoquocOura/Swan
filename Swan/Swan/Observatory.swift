@@ -35,20 +35,11 @@ public final class Observatory {
         return token
     }
 
-    /// Registers a closure to receive notifications for the specified `name` and `object`.
-    @discardableResult
-    public func observe(_ name: String?, object: AnyObject?, closure: @escaping ClosureNotificationCenter) -> String {
-        if let name = name {
-            return observe(name: Notification.Name(name), object: object, closure: closure)
-        }
-        return observe(name: nil, object: object, closure: closure)
-    }
-    
     /// Registers a closure to receive notifications for the specified `name` and `object`. Notification is automatically removed after the first time it's fired.
     @discardableResult
-    public func observeOnce(_ name: String?, object: AnyObject?, closure: @escaping ClosureNotificationCenter) -> String {
+    public func observeOnce(name: Notification.Name?, object: AnyObject?, closure: @escaping ClosureNotificationCenter) -> String {
         let token = createToken()
-        let observer = NotificationCenter.default.addObserver(forName: name.map { NSNotification.Name(rawValue: $0) }, object: object, queue: nil) {
+        let observer = NotificationCenter.default.addObserver(forName: name, object: object, queue: nil) {
             [unowned self] note in
             self.removeObserverForToken(token)
             closure(note)
