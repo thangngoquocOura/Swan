@@ -24,19 +24,19 @@ class ExtensionsTests : XCTestCase {
         XCTAssertNil(UIColor(hex: "foo"))
         XCTAssertNil(UIColor(hex: "# deadbeef"))
 
-        var rgba = UIColor.blackColor().rgba
+        var rgba = UIColor.black.rgba
         XCTAssert(rgba[0] == 0 && rgba[1] == 0 && rgba[2] == 0 && rgba[3] == 1)
-        rgba = UIColor.clearColor().rgba
+        rgba = UIColor.clear.rgba
         XCTAssert(rgba[0] == 0 && rgba[1] == 0 && rgba[2] == 0 && rgba[3] == 0)
-        rgba = UIColor.blueColor().colorWithAlphaComponent(0.5).rgba
+        rgba = UIColor.blue.withAlphaComponent(0.5).rgba
         XCTAssert(rgba[0] == 0 && rgba[1] == 0 && rgba[2] == 1 && rgba[3] == 0.5)
     }
 
     func testNSDate() {
-        let d1 = NSDate(timeIntervalSince1970: 5000)
-        let d2 = NSDate(timeIntervalSince1970: 5001)
+        let d1 = Date(timeIntervalSince1970: 5000)
+        let d2 = Date(timeIntervalSince1970: 5001)
         XCTAssert(d1 < d2)
-        let d3 = NSDate(timeIntervalSince1970: 5000)
+        let d3 = Date(timeIntervalSince1970: 5000)
         XCTAssert(d1 == d3)
     }
 
@@ -58,7 +58,7 @@ class ExtensionsTests : XCTestCase {
     
     func testCGFloat() {
         let ff: CGFloat = 5
-        ff - Int8(5)
+        _ = ff - Int8(5)
         
         let c: CGFloat = 0.5
         let f: Float = 0.5
@@ -109,9 +109,9 @@ class ExtensionsTests : XCTestCase {
         XCTAssert(cvar == 1.0)
         cvar /= d
         XCTAssert(cvar == 2.0)
-        cvar /= i
+        cvar /= CGFloat(i)
         XCTAssert(cvar == -1.0)
-        cvar /= u
+        cvar /= CGFloat(u)
         XCTAssert(cvar == -0.5)
     
         cvar *= u

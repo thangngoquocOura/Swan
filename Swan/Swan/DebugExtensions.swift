@@ -13,13 +13,13 @@ extension AVCaptureVideoOrientation: CustomDebugStringConvertible {
     
     public var debugDescription: String {
         switch self {
-        case .Portrait:
+        case .portrait:
             return "Portrait"
-        case .PortraitUpsideDown:
+        case .portraitUpsideDown:
             return "PortraitUpsideDown"
-        case .LandscapeLeft:
+        case .landscapeLeft:
             return "LandscapeLeft"
-        case .LandscapeRight:
+        case .landscapeRight:
             return "LandscapeRight"
         }
     }
@@ -30,15 +30,15 @@ extension UIInterfaceOrientation: CustomDebugStringConvertible {
     
     public var debugDescription: String {
         switch self {
-        case .Portrait:
+        case .portrait:
             return "Portrait"
-        case .PortraitUpsideDown:
+        case .portraitUpsideDown:
             return "PortraitUpsideDown"
-        case .LandscapeLeft:
+        case .landscapeLeft:
             return "LandscapeLeft"
-        case .LandscapeRight:
+        case .landscapeRight:
             return "LandscapeRight"
-        case .Unknown:
+        case .unknown:
             return "Unknown"
         }
     }
@@ -49,19 +49,19 @@ extension UIDeviceOrientation: CustomDebugStringConvertible {
     
     public var debugDescription: String {
         switch self {
-        case .Portrait:
+        case .portrait:
             return "Portrait"
-        case .PortraitUpsideDown:
+        case .portraitUpsideDown:
             return "PortraitUpsideDown"
-        case .LandscapeLeft:
+        case .landscapeLeft:
             return "LandscapeLeft"
-        case .LandscapeRight:
+        case .landscapeRight:
             return "LandscapeRight"
-        case .FaceUp:
+        case .faceUp:
             return "FaceUp"
-        case .FaceDown:
+        case .faceDown:
             return "FaceDown"
-        case .Unknown:
+        case .unknown:
             return "Unknown"
         }
     }

@@ -13,7 +13,7 @@ import Swan
 class NSDateExtensionsTests: XCTestCase {
     
     func testCalendarDaysToDate() {
-        let now = NSDate()
+        let now = Date()
         let midnight = now.startOfDay
         var diff = midnight.calendarDaysToDate(now)
         XCTAssert(diff == 0)
@@ -24,8 +24,8 @@ class NSDateExtensionsTests: XCTestCase {
     }
     
     func testStartOfDay() {
-        let date = NSDate()
-        let comps = NSCalendar.currentCalendar().components([.Year, .Month, .Day], fromDate: date)
+        let date = Date()
+        let comps = Calendar.current.dateComponents([.year, .month, .day], from: date)
         let startOfDay = date.startOfDay
         XCTAssert(startOfDay.year == comps.year && startOfDay.month == comps.month && startOfDay.day == comps.day && startOfDay.hour == 0 && startOfDay.minute == 0 && startOfDay.second == 0)
     }

@@ -10,24 +10,24 @@ import Foundation
 
 public extension NSLocale {
     
-    final class func appLocale() -> NSLocale {
-        if let localization = NSBundle.mainBundle().preferredLocalizations.first {
-            return NSLocale(localeIdentifier: localization)
+    final class func appLocale() -> Locale {
+        if let localization = Bundle.main.preferredLocalizations.first {
+            return Locale(identifier: localization)
         } else {
-            return NSLocale.currentLocale()
+            return Locale.current
         }
     }
     
     /// Returns the preferred locale taking into account device locale settings and supported application localizations.
-    final class func preferredLocale() -> NSLocale {
-        let preferredLanguages = NSLocale.preferredLanguages()
-        let preferredLocalizations = NSBundle.mainBundle().localizations
+    final class func preferredLocale() -> Locale {
+        let preferredLanguages = NSLocale.preferredLanguages
+        let preferredLocalizations = Bundle.main.localizations
         for preferredLanguage in preferredLanguages {
             if preferredLocalizations.contains(preferredLanguage) {
-                return NSLocale(localeIdentifier: preferredLanguage)
+                return Locale(identifier: preferredLanguage)
             }
         }
-        return NSLocale.currentLocale()
+        return Locale.current
     }
     
 }

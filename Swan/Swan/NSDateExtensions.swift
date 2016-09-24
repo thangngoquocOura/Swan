@@ -8,118 +8,108 @@
 
 import Foundation
 
-// MARK: Comparable
-
-extension NSDate: Comparable { }
-
-public func ==(lhs: NSDate, rhs: NSDate) -> Bool {
-    return lhs.isEqualToDate(rhs)
-}
-
-public func <(lhs: NSDate, rhs: NSDate) -> Bool {
-    return lhs.timeIntervalSinceDate(rhs) < 0
-}
-
 // MARK: Helpers
 
-public extension NSDate {
+public extension Date {
 
-    final var nanosecond: Int {
-        return NSCalendar.mainThreadSharedCalendar().component(.Nanosecond, fromDate: self)
+    public var nanosecond: Int {
+        return Calendar.mainThreadSharedCalendar().component(.nanosecond, from: self)
     }
 
-    final var second: Int {
-        return NSCalendar.mainThreadSharedCalendar().component(.Second, fromDate: self)
+    public var second: Int {
+        return Calendar.mainThreadSharedCalendar().component(.second, from: self)
     }
     
-    final var minute: Int {
-        return NSCalendar.mainThreadSharedCalendar().component(.Minute, fromDate: self)
+    public var minute: Int {
+        return Calendar.mainThreadSharedCalendar().component(.minute, from: self)
     }
     
-    final var hour: Int {
-        return NSCalendar.mainThreadSharedCalendar().component(.Hour, fromDate: self)
+    public var hour: Int {
+        return Calendar.mainThreadSharedCalendar().component(.hour, from: self)
     }
     
-    final var day: Int {
-        return NSCalendar.mainThreadSharedCalendar().component(.Day, fromDate: self)
+    public var day: Int {
+        return Calendar.mainThreadSharedCalendar().component(.day, from: self)
     }
     
-    final var month: Int {
-        return NSCalendar.mainThreadSharedCalendar().component(.Month, fromDate: self)
+    public var month: Int {
+        return Calendar.mainThreadSharedCalendar().component(.month, from: self)
     }
     
-    final var year: Int {
-        return NSCalendar.mainThreadSharedCalendar().component(.Year, fromDate: self)
+    public var year: Int {
+        return Calendar.mainThreadSharedCalendar().component(.year, from: self)
     }
     
     /// Returns a date set to the start of the day (00:00:00) of this date.
-    final var startOfDay: NSDate {
-        let calendar = NSCalendar.mainThreadSharedCalendar()
-        let comps = calendar.components([.Year, .Month, .Day], fromDate: self)
-        return calendar.dateFromComponents(comps)!
+    public var startOfDay: Date {
+        let calendar = Calendar.mainThreadSharedCalendar()
+        let comps = calendar.dateComponents([.year, .month, .day], from: self)
+        return calendar.date(from: comps)!
     }
     
     /// Returns a date set to the end of the day (23:59:59) of this date.
-    final var endOfDay: NSDate {
-        let calendar = NSCalendar.mainThreadSharedCalendar()
-        let comps = calendar.components([.Year, .Month, .Day], fromDate: self)
+    public var endOfDay: Date {
+        let calendar = Calendar.mainThreadSharedCalendar()
+        var comps = calendar.dateComponents([.year, .month, .day], from: self)
         comps.hour = 23
         comps.minute = 59
         comps.second = 59
-        return calendar.dateFromComponents(comps)!
+        return calendar.date(from: comps)!
     }
 
     /// Returns a date set to the start of the month (1st day, 00:00:00) of this date.
-    final var startOfMonth: NSDate {
-        let calendar = NSCalendar.mainThreadSharedCalendar()
-        let comps = calendar.components([.Year, .Month], fromDate: self)
-        return calendar.dateFromComponents(comps)!
+    public var startOfMonth: Date {
+        let calendar = Calendar.mainThreadSharedCalendar()
+        let comps = calendar.dateComponents([.year, .month], from: self)
+        return calendar.date(from: comps)!
     }
 
     /// Returns a date set to the end of the month (last day, 23:59:59) of this date.
-    final var endOfMonth: NSDate {
-        let calendar = NSCalendar.mainThreadSharedCalendar()
-        let dayRange = calendar.rangeOfUnit(.Day, inUnit: .Month, forDate: self)
-        let comps = calendar.components([.Year, .Month], fromDate: self)
-        comps.day = dayRange.length
+    public var endOfMonth: Date {
+        let calendar = Calendar.mainThreadSharedCalendar()
+        let dayRange = calendar.range(of: .day, in: .month, for: self)!
+        var comps = calendar.dateComponents([.year, .month], from: self)
+        comps.day = dayRange.upperBound
         comps.hour = 23
         comps.minute = 59
         comps.second = 59
-        return calendar.dateFromComponents(comps)!
+        return calendar.date(from: comps)!
     }
 
     /// Returns the noon (12:00:00) of this date.
-    final var noon: NSDate {
-        let calendar = NSCalendar.mainThreadSharedCalendar()
-        let comps = calendar.components([.Year, .Month, .Day], fromDate: self)
+    public var noon: Date {
+        let calendar = Calendar.mainThreadSharedCalendar()
+        var comps = calendar.dateComponents([.year, .month, .day], from: self)
         comps.hour = 12
-        return calendar.dateFromComponents(comps)!
+        return calendar.date(from: comps)!
     }
     
     /// Returns the zero-indexed weekday component of this date starting on monday in range [0, 6].
-    final var zeroIndexedWeekdayStartingOnMonday: Int {
-        let weekday = NSCalendar.mainThreadSharedCalendar().component(.Weekday, fromDate: self)
+    public var zeroIndexedWeekdayStartingOnMonday: Int {
+        let weekday = Calendar.mainThreadSharedCalendar().component(.day, from: self)
         return weekday >= 2 ? weekday - 2 : 6
     }
 
     /// Returns the number of calendar days between this date and `date`.
-    final func calendarDaysToDate(date: NSDate) -> Int {
-        let calendar = NSCalendar.mainThreadSharedCalendar()
+    public func calendarDaysToDate(_ date: Date) -> Int {
+        let calendar = Calendar.mainThreadSharedCalendar() as NSCalendar
         var fromDate: NSDate?
         var toDate: NSDate?
-        calendar.rangeOfUnit(NSCalendarUnit.Day, startDate: &fromDate, interval: nil, forDate: self)
-        calendar.rangeOfUnit(NSCalendarUnit.Day, startDate: &toDate, interval: nil, forDate: date)
-        return calendar.components(NSCalendarUnit.Day, fromDate: fromDate!, toDate: toDate!, options: NSCalendarOptions()).day
+        calendar.range(of: .day, start: &fromDate, interval: nil, for: self)
+        calendar.range(of: .day, start: &toDate, interval: nil, for: date)
+        let comps = calendar.components(.day, from: fromDate as! Date, to: toDate as! Date, options: NSCalendar.Options())
+        return comps.day!
     }
     
     /// Returns the number of calendar weeks between this date and `date`.
-    final func calendarWeeksToDate(date: NSDate) -> Int {
-        let calendar = NSCalendar.mainThreadSharedCalendar()
+    public func calendarWeeksToDate(_ date: Date) -> Int {
+        let calendar = Calendar.mainThreadSharedCalendar() as NSCalendar
         var fromDate: NSDate?
         var toDate: NSDate?
-        calendar.rangeOfUnit(NSCalendarUnit.WeekOfYear, startDate: &fromDate, interval: nil, forDate: self)
-        calendar.rangeOfUnit(NSCalendarUnit.WeekOfYear, startDate: &toDate, interval: nil, forDate: date)
-        return calendar.components(NSCalendarUnit.WeekOfYear, fromDate: fromDate!, toDate: toDate!, options: NSCalendarOptions()).weekOfYear
+        calendar.range(of: .year, start: &fromDate, interval: nil, for: self)
+        calendar.range(of: .year, start: &toDate, interval: nil, for: date)
+        let comps = calendar.components(.weekOfYear, from: fromDate as! Date, to: toDate as! Date, options: NSCalendar.Options())
+        return comps.weekOfYear!
     }
 
 }
@@ -128,28 +118,28 @@ public extension NSDate {
 
 public struct TimeUnit {
     
-    let unit: NSCalendarUnit
+    let unit: Calendar.Component
     let duration: Int
     
-    init(_ unit: NSCalendarUnit, duration: Int) {
+    init(_ unit: Calendar.Component, duration: Int) {
         self.unit = unit
         self.duration = duration
     }
     
 }
 
-public func +(lhs: NSDate, rhs: TimeUnit) -> NSDate {
-    return NSCalendar.mainThreadSharedCalendar().dateByAddingUnit(rhs.unit, value: rhs.duration, toDate: lhs, options: [])!
+public func +(lhs: Date, rhs: TimeUnit) -> Date {
+    return Calendar.mainThreadSharedCalendar().date(byAdding: rhs.unit, value: rhs.duration, to: lhs)!
 }
 
-public func +=(inout lhs: NSDate, rhs: TimeUnit) {
-    lhs = NSCalendar.mainThreadSharedCalendar().dateByAddingUnit(rhs.unit, value: rhs.duration, toDate: lhs, options: [])!
+public func +=(lhs: inout Date, rhs: TimeUnit) {
+    lhs = Calendar.mainThreadSharedCalendar().date(byAdding: rhs.unit, value: rhs.duration, to: lhs)!
 }
 
-public func -(lhs: NSDate, rhs: TimeUnit) -> NSDate {
-    return NSCalendar.mainThreadSharedCalendar().dateByAddingUnit(rhs.unit, value: -rhs.duration, toDate: lhs, options: [])!
+public func -(lhs: Date, rhs: TimeUnit) -> Date {
+    return Calendar.mainThreadSharedCalendar().date(byAdding: rhs.unit, value: -rhs.duration, to: lhs)!
 }
 
-public func -=(inout lhs: NSDate, rhs: TimeUnit) {
-    lhs = NSCalendar.mainThreadSharedCalendar().dateByAddingUnit(rhs.unit, value: -rhs.duration, toDate: lhs, options: [])!
+public func -=(lhs: inout Date, rhs: TimeUnit) {
+    lhs = Calendar.mainThreadSharedCalendar().date(byAdding: rhs.unit, value: -rhs.duration, to: lhs)!
 }

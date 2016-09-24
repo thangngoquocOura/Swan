@@ -11,27 +11,28 @@ import XCTest
 
 class ObservatoryTests: XCTestCase {
     
-    let notificationCenter = NSNotificationCenter.defaultCenter()
+    let notificationCenter = NotificationCenter.default
 
-    private class TestObserver {
+    fileprivate class TestObserver {
         let observatory = Observatory()
         var count = 0
     }
     
-    private class Observable: NSObject {
+    fileprivate class Observable: NSObject {
         dynamic var name = ""
     }
 
     func testObserveOnce() {
         var i = 0
+        let once = Notification.Name("once")
         let notificationCenterProxy = Observatory()
-        notificationCenterProxy.observeOnce("once", object: nil) {
+        notificationCenterProxy.observeOnce(name: once, object: nil) {
             _ in
             i += 1
         }
-        notificationCenter.postNotificationName("once", object: nil)
+        notificationCenter.post(name: once, object: nil)
         XCTAssert(i == 1)
-        notificationCenter.postNotificationName("once", object: nil)
+        notificationCenter.post(name: once, object: nil)
         XCTAssert(i == 1)
     }
     
@@ -50,20 +51,21 @@ class ObservatoryTests: XCTestCase {
     
     func testDeinit() {
         var i = 0
+        let once = Notification.Name("once")
         autoreleasepool {
             let observer = TestObserver()
-            observer.observatory.observeOnce("once", object: nil) {
+            observer.observatory.observeOnce(name: once, object: nil) {
                 _ in
                 i += 1
             }
-            observer.observatory.observe(nil, object: nil) {
+            observer.observatory.observe(name: nil, object: nil) {
                 _ in
                 i += 1
             }
-            notificationCenter.postNotificationName("", object: nil)
+            notificationCenter.post(name: Notification.Name(""), object: nil)
             XCTAssert(i == 1)
         }
-        notificationCenter.postNotificationName("once", object: nil)
+        notificationCenter.post(name: once, object: nil)
         XCTAssert(i == 1)
         
         let observable = Observable()
@@ -79,15 +81,16 @@ class ObservatoryTests: XCTestCase {
     func testRemoveObserver() {
         var i = 0
         let notificationCenterProxy = Observatory()
-        let token = notificationCenterProxy.observe(nil, object: nil) {
+        let token = notificationCenterProxy.observe(name: nil, object: nil) {
             _ in
             i += 1
         }
-        notificationCenter.postNotificationName("", object: nil)
-        notificationCenter.postNotificationName("", object: nil)
+        let empty = Notification.Name("")
+        notificationCenter.post(name: empty, object: nil)
+        notificationCenter.post(name: empty, object: nil)
         XCTAssert(i == 2)
         notificationCenterProxy.removeObserverForToken(token)
-        notificationCenter.postNotificationName("", object: nil)
+        notificationCenter.post(name: empty, object: nil)
         XCTAssert(i == 2)
     }
     

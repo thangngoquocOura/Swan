@@ -15,7 +15,7 @@ public func +(lhs: CGFloat, rhs: CGFloatConvertible) -> CGFloat {
     return lhs + rhs.CGFloatValue()
 }
 
-public func +=(inout lhs: CGFloat, rhs: CGFloatConvertible) {
+public func +=(lhs: inout CGFloat, rhs: CGFloatConvertible) {
     lhs += rhs.CGFloatValue()
 }
 
@@ -23,7 +23,7 @@ public func -(lhs: CGFloat, rhs: CGFloatConvertible) -> CGFloat {
     return lhs - rhs.CGFloatValue()
 }
 
-public func -=(inout lhs: CGFloat, rhs: CGFloatConvertible) {
+public func -=(lhs: inout CGFloat, rhs: CGFloatConvertible) {
     lhs -= rhs.CGFloatValue()
 }
 
@@ -31,7 +31,7 @@ public func *(lhs: CGFloat, rhs: CGFloatConvertible) -> CGFloat {
     return lhs * rhs.CGFloatValue()
 }
 
-public func *=(inout lhs: CGFloat, rhs: CGFloatConvertible) {
+public func *=(lhs: inout CGFloat, rhs: CGFloatConvertible) {
     lhs *= rhs.CGFloatValue()
 }
 
@@ -39,6 +39,6 @@ public func /(lhs: CGFloat, rhs: CGFloatConvertible) -> CGFloat {
     return lhs / rhs.CGFloatValue()
 }
 
-public func /=(inout lhs: CGFloat, rhs: CGFloatConvertible) {
+public func /=(lhs: inout CGFloat, rhs: CGFloatConvertible) {
     lhs /= rhs.CGFloatValue()
 }

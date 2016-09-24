@@ -18,4 +18,21 @@ class ArrayExtensionsTests: XCTestCase {
         XCTAssert(bytes.hex(format: "%02x", separator: ", ") == "30, a5, bc")
     }
     
+    func testRandom() {
+        XCTAssert([].random() == nil)
+        XCTAssert([5].random() == 5)
+        let a = [5, 10, 15]
+        XCTAssert(a.contains(a.random()!))
+    }
+    
+    func testRemove() {
+        var a = [5, 10, 15]
+        XCTAssert(a.remove(1) == nil)
+        XCTAssert(a.remove(5) == 5)
+        XCTAssert(a == [10, 15])
+        a.remove(10)
+        a.remove(15)
+        XCTAssert(a.isEmpty)
+    }
+    
 }

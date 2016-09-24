@@ -12,22 +12,22 @@ public extension String {
 
     /// Returns the uppercase representation of this string taking into account the current app locale.
     var upcase: String {
-        return uppercaseStringWithLocale(NSLocale.appLocale())
+        return uppercased(with: NSLocale.appLocale() as Locale)
     }
     
     /// Returns the downcase representation of this string taking into account the current app locale.
     var downcase: String {
-        return lowercaseStringWithLocale(NSLocale.appLocale())
+        return lowercased(with: NSLocale.appLocale() as Locale)
     }
     
     /// Returns a string object containing the characters of the `String` that lie within a given range.
     subscript(subRange: Range<Int>) -> String {
-        return substringWithRange(startIndex.advancedBy(subRange.startIndex)..<startIndex.advancedBy(subRange.endIndex))
+        return substring(with: characters.index(startIndex, offsetBy: subRange.lowerBound)..<characters.index(startIndex, offsetBy: subRange.upperBound))
     }
 
     /// Returns a string object containing the characters of the `String` that lie within a given range.
     subscript(subRange: NSRange) -> String {
-        return substringWithRange(startIndex.advancedBy(subRange.location)..<startIndex.advancedBy(subRange.location + subRange.length))
+        return substring(with: characters.index(startIndex, offsetBy: subRange.location)..<characters.index(startIndex, offsetBy: subRange.location + subRange.length))
     }
 
     /// Remove the indicated `subRange` of characters.
@@ -36,9 +36,9 @@ public extension String {
     ///
     /// - Complexity: O(`self.count`).
     /// - Returns: String that was removed
-    mutating func removeRange(subRange: Range<Int>) -> String {
+    mutating func removeRange(_ subRange: Range<Int>) -> String {
         let removed = self[subRange]
-        removeRange(startIndex.advancedBy(subRange.startIndex)..<startIndex.advancedBy(subRange.endIndex))
+        removeSubrange(index(startIndex, offsetBy: subRange.lowerBound)..<index(startIndex, offsetBy: subRange.upperBound))
         return removed
     }
     
@@ -88,9 +88,9 @@ public extension String {
 
 public extension String {
     
-    func match(pattern: String) throws -> [String] {
+    func match(_ pattern: String) throws -> [String] {
         let regexp = try createRegexWithPattern(pattern)
-        let matches = regexp.matchesInString(self, options: NSMatchingOptions(), range: NSMakeRange(0, characters.count))
+        let matches = regexp.matches(in: self, options: NSRegularExpression.MatchingOptions(), range: NSMakeRange(0, characters.count))
         var results = [String]()
         for match in matches {
             results.append(self[match.range])
@@ -98,14 +98,14 @@ public extension String {
         return results
     }
     
-    func gsub(pattern: String, replacement: String) throws -> String {
+    func gsub(_ pattern: String, replacement: String) throws -> String {
         let regexp = try createRegexWithPattern(pattern)
-        return regexp.stringByReplacingMatchesInString(self, options: NSMatchingOptions(), range: NSMakeRange(0, characters.count), withTemplate: replacement)
+        return regexp.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(), range: NSMakeRange(0, characters.count), withTemplate: replacement)
     }
     
-    func gsub(pattern: String, replacementClosure: (String) -> (String)) throws -> String {
+    func gsub(_ pattern: String, replacementClosure: (String) -> (String)) throws -> String {
         let regexp = try createRegexWithPattern(pattern)
-        let matches = regexp.matchesInString(self, options: NSMatchingOptions(), range: NSMakeRange(0, characters.count))
+        let matches = regexp.matches(in: self, options: NSRegularExpression.MatchingOptions(), range: NSMakeRange(0, characters.count))
         var result = ""
         var idx = 0
         for match in matches {
@@ -120,12 +120,12 @@ public extension String {
         return result
     }
 
-    static private var regexpCache = [String: NSRegularExpression]()
+    static fileprivate var regexpCache = [String: NSRegularExpression]()
 
-    private func createRegexWithPattern(pattern: String) throws -> NSRegularExpression {
+    fileprivate func createRegexWithPattern(_ pattern: String) throws -> NSRegularExpression {
         var regexp: NSRegularExpression? = String.regexpCache[pattern]
         if regexp == nil {
-            regexp = try NSRegularExpression(pattern: pattern, options: NSRegularExpressionOptions())
+            regexp = try NSRegularExpression(pattern: pattern, options: NSRegularExpression.Options())
             String.regexpCache[pattern] = regexp
         }
         return regexp!
