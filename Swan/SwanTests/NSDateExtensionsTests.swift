@@ -30,4 +30,10 @@ class NSDateExtensionsTests: XCTestCase {
         XCTAssert(startOfDay.year == comps.year && startOfDay.month == comps.month && startOfDay.day == comps.day && startOfDay.hour == 0 && startOfDay.minute == 0 && startOfDay.second == 0)
     }
     
+    func testEndOfMonth() {
+        let date = Date(timeIntervalSince1970: 1475237594)
+        let endOfMonth = date.endOfMonth
+        XCTAssert(endOfMonth.day == 30 && endOfMonth.month == 9 && endOfMonth.year == 2016 && endOfMonth.hour == 23 && endOfMonth.minute == 59 && endOfMonth.second == 59)
+    }
+    
 }

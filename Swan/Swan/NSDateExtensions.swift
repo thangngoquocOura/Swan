@@ -69,7 +69,7 @@ public extension Date {
         let calendar = Calendar.mainThreadSharedCalendar()
         let dayRange = calendar.range(of: .day, in: .month, for: self)!
         var comps = calendar.dateComponents([.year, .month], from: self)
-        comps.day = dayRange.upperBound
+        comps.day = dayRange.upperBound - dayRange.lowerBound
         comps.hour = 23
         comps.minute = 59
         comps.second = 59
