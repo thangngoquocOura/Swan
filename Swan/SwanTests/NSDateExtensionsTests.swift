@@ -36,4 +36,11 @@ class NSDateExtensionsTests: XCTestCase {
         XCTAssert(endOfMonth.day == 30 && endOfMonth.month == 9 && endOfMonth.year == 2016 && endOfMonth.hour == 23 && endOfMonth.minute == 59 && endOfMonth.second == 59)
     }
     
+    func testZeroIndexedWeekdayStartingOnMonday() {
+        var date = Date(timeIntervalSince1970: 1475442000)
+        XCTAssert(date.zeroIndexedWeekdayStartingOnMonday == 0)
+        date = Date(timeIntervalSince1970: 1476046799)
+        XCTAssert(date.zeroIndexedWeekdayStartingOnMonday == 6)
+    }
+    
 }

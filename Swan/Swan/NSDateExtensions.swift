@@ -86,7 +86,7 @@ public extension Date {
     
     /// Returns the zero-indexed weekday component of this date starting on monday in range [0, 6].
     public var zeroIndexedWeekdayStartingOnMonday: Int {
-        let weekday = Calendar.mainThreadSharedCalendar().component(.day, from: self)
+        let weekday = Calendar.mainThreadSharedCalendar().component(.weekday, from: self)
         return weekday >= 2 ? weekday - 2 : 6
     }
 
