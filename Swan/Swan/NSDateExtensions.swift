@@ -92,23 +92,25 @@ public extension Date {
 
     /// Returns the number of calendar days between this date and `date`.
     public func calendarDaysToDate(_ date: Date) -> Int {
-        let calendar = Calendar.mainThreadSharedCalendar() as NSCalendar
-        var fromDate: NSDate?
-        var toDate: NSDate?
-        calendar.range(of: .day, start: &fromDate, interval: nil, for: self)
-        calendar.range(of: .day, start: &toDate, interval: nil, for: date)
-        let comps = calendar.components(.day, from: fromDate as! Date, to: toDate as! Date, options: NSCalendar.Options())
+        let calendar = Calendar.mainThreadSharedCalendar()
+        var fromDate = Date()
+        var toDate = Date()
+        var interval: TimeInterval = 0
+        _ = calendar.dateInterval(of: .day, start: &fromDate, interval: &interval, for: self)
+        _ = calendar.dateInterval(of: .day, start: &toDate, interval: &interval, for: date)
+        let comps = calendar.dateComponents([.day], from: fromDate, to: toDate)
         return comps.day!
     }
     
     /// Returns the number of calendar weeks between this date and `date`.
     public func calendarWeeksToDate(_ date: Date) -> Int {
-        let calendar = Calendar.mainThreadSharedCalendar() as NSCalendar
-        var fromDate: NSDate?
-        var toDate: NSDate?
-        calendar.range(of: .year, start: &fromDate, interval: nil, for: self)
-        calendar.range(of: .year, start: &toDate, interval: nil, for: date)
-        let comps = calendar.components(.weekOfYear, from: fromDate as! Date, to: toDate as! Date, options: NSCalendar.Options())
+        let calendar = Calendar.mainThreadSharedCalendar()
+        var fromDate = Date()
+        var toDate = Date()
+        var interval: TimeInterval = 0
+        _ = calendar.dateInterval(of: .day, start: &fromDate, interval: &interval, for: self)
+        _ = calendar.dateInterval(of: .day, start: &toDate, interval: &interval, for: date)
+        let comps = calendar.dateComponents([.weekOfYear], from: fromDate, to: toDate)
         return comps.weekOfYear!
     }
 
