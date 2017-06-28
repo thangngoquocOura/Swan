@@ -13,13 +13,13 @@ class ObservatoryTests: XCTestCase {
     
     let notificationCenter = NotificationCenter.default
 
-    fileprivate class TestObserver {
+    private class TestObserver {
         let observatory = Observatory()
         var count = 0
     }
     
-    fileprivate class Observable: NSObject {
-        dynamic var name = ""
+    private class Observable: NSObject {
+        @objc dynamic var name = ""
     }
 
     func testObserveOnce() {
