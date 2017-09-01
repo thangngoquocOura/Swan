@@ -8,9 +8,9 @@
 
 import Foundation
 
-public extension NSLocale {
+public extension Locale {
     
-    final class func appLocale() -> Locale {
+    static func appLocale() -> Locale {
         if let localization = Bundle.main.preferredLocalizations.first {
             return Locale(identifier: localization)
         } else {
@@ -19,7 +19,7 @@ public extension NSLocale {
     }
     
     /// Returns the preferred locale taking into account device locale settings and supported application localizations.
-    final class func preferredLocale() -> Locale {
+    static func preferredLocale() -> Locale {
         let preferredLanguages = NSLocale.preferredLanguages
         let preferredLocalizations = Bundle.main.localizations
         for preferredLanguage in preferredLanguages {

@@ -12,12 +12,12 @@ public extension String {
 
     /// Returns the uppercase representation of this string taking into account the current app locale.
     var upcase: String {
-        return uppercased(with: NSLocale.appLocale() as Locale)
+        return uppercased(with: Locale.appLocale())
     }
     
     /// Returns the downcase representation of this string taking into account the current app locale.
     var downcase: String {
-        return lowercased(with: NSLocale.appLocale() as Locale)
+        return lowercased(with: Locale.appLocale())
     }
     
     /// Returns a string object containing the characters of the `String` that lie within a given range.

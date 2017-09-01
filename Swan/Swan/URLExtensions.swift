@@ -1,5 +1,5 @@
 //
-//  NSURLExtensions.swift
+//  URLExtensions.swift
 //  Swan
 //
 //  Created by Antti Laitala on 22/11/15.
