@@ -1,5 +1,5 @@
 //
-//  NSURLExtensionsTests.swift
+//  URLExtensionsTests.swift
 //  Swan
 //
 //  Created by Antti Laitala on 22/11/15.
@@ -10,7 +10,7 @@ import Foundation
 import Swan
 import XCTest
 
-class NSURLExtensionsTests: XCTestCase {
+class URLExtensionsTests: XCTestCase {
 
     func testQueryItemsDict() {
         var items = URL(string: "http://foo.bar?baz")!.queryItemsDict

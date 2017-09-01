@@ -13,7 +13,7 @@ public extension UIColor {
     convenience init?(hex: String) {
         var hex = hex
         if (hex.hasPrefix("#")) {
-            hex = hex.substring(from: hex.index(hex.startIndex, offsetBy: 1));
+            hex = String(hex[hex.index(hex.startIndex, offsetBy: 1)..<hex.endIndex])
         }
         
         var r: UInt64 = 0

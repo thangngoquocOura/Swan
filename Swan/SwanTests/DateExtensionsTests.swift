@@ -1,5 +1,5 @@
 //
-//  NSDateExtensionsTests.swift
+//  DateExtensionsTests.swift
 //  Swan
 //
 //  Created by Antti Laitala on 30/07/15.
@@ -10,7 +10,7 @@ import Foundation
 import XCTest
 import Swan
 
-class NSDateExtensionsTests: XCTestCase {
+class DateExtensionsTests: XCTestCase {
     
     func testCalendarDaysToDate() {
         let now = Date()

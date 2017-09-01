@@ -18,41 +18,5 @@ public extension UIView {
         UIGraphicsEndImageContext()
         return image!
     }
-
-    final var x: CGFloat {
-        get {
-            return frame.x
-        }
-        set {
-            frame.origin.x = newValue
-        }
-    }
-    
-    final var y: CGFloat {
-        get {
-            return frame.y
-        }
-        set {
-            frame.origin.y = newValue
-        }
-    }
-    
-    final var width: CGFloat {
-        get {
-            return frame.width
-        }
-        set {
-            frame.size.width = newValue
-        }
-    }
-    
-    final var height: CGFloat {
-        get {
-            return frame.height
-        }
-        set {
-            frame.size.height = newValue
-        }
-    }
     
 }

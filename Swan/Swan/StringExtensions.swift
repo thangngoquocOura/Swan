@@ -22,12 +22,16 @@ public extension String {
     
     /// Returns a string object containing the characters of the `String` that lie within a given range.
     subscript(subRange: Range<Int>) -> String {
-        return substring(with: characters.index(startIndex, offsetBy: subRange.lowerBound)..<characters.index(startIndex, offsetBy: subRange.upperBound))
+        let start = index(startIndex, offsetBy: subRange.lowerBound)
+        let end = index(startIndex, offsetBy: subRange.upperBound)
+        return String(self[start..<end])
     }
 
     /// Returns a string object containing the characters of the `String` that lie within a given range.
     subscript(subRange: NSRange) -> String {
-        return substring(with: characters.index(startIndex, offsetBy: subRange.location)..<characters.index(startIndex, offsetBy: subRange.location + subRange.length))
+        let start = index(startIndex, offsetBy: subRange.lowerBound)
+        let end = index(startIndex, offsetBy: subRange.upperBound)
+        return String(self[start..<end])
     }
 
     /// Remove the indicated `subRange` of characters.
@@ -43,46 +47,6 @@ public extension String {
     }
     
 }
-
-// MARK: Hashing
-
-/*
-public extension String {
-    
-    func md2() -> String {
-        return (self as NSString).digestUsingHashFunction(.MD2)
-    }
-    
-    func md4() -> String {
-        return (self as NSString).digestUsingHashFunction(.MD4)
-    }
-    
-    func md5() -> String {
-        return (self as NSString).digestUsingHashFunction(.MD5)
-    }
-    
-    func sha1() -> String {
-        return (self as NSString).digestUsingHashFunction(.SHA1)
-    }
-    
-    func sha224() -> String {
-        return (self as NSString).digestUsingHashFunction(.SHA224)
-    }
-    
-    func sha256() -> String {
-        return (self as NSString).digestUsingHashFunction(.SHA256)
-    }
-    
-    func sha384() -> String {
-        return (self as NSString).digestUsingHashFunction(.SHA384)
-    }
-    
-    func sha512() -> String {
-        return (self as NSString).digestUsingHashFunction(.SHA512)
-    }
-    
-}
-*/
 
 // MARK: Regex
 
@@ -132,4 +96,3 @@ public extension String {
     }
     
 }
-
