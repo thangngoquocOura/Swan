@@ -35,7 +35,7 @@ class StringExtensionsTests: XCTestCase {
     func testMatches() {
         let string = "foo bar foo"
         var result = try! string.match(".")
-        XCTAssert(result.count == string.characters.count && result.joined(separator: "") == string)
+        XCTAssert(result.count == string.count && result.joined(separator: "") == string)
         XCTAssert(try! string.match("Foo").isEmpty)
         result = try! string.match("(f|b)")
         XCTAssert(result.count == 3 && result[0] == "f" && result[1] == "b" && result[2] == "f")

@@ -54,7 +54,7 @@ public extension String {
     
     func match(_ pattern: String) throws -> [String] {
         let regexp = try createRegexWithPattern(pattern)
-        let matches = regexp.matches(in: self, options: NSRegularExpression.MatchingOptions(), range: NSMakeRange(0, characters.count))
+        let matches = regexp.matches(in: self, options: NSRegularExpression.MatchingOptions(), range: NSMakeRange(0, count))
         var results = [String]()
         for match in matches {
             results.append(self[match.range])
@@ -64,12 +64,12 @@ public extension String {
     
     func gsub(_ pattern: String, replacement: String) throws -> String {
         let regexp = try createRegexWithPattern(pattern)
-        return regexp.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(), range: NSMakeRange(0, characters.count), withTemplate: replacement)
+        return regexp.stringByReplacingMatches(in: self, options: NSRegularExpression.MatchingOptions(), range: NSMakeRange(0, count), withTemplate: replacement)
     }
     
     func gsub(_ pattern: String, replacementClosure: (String) -> (String)) throws -> String {
         let regexp = try createRegexWithPattern(pattern)
-        let matches = regexp.matches(in: self, options: NSRegularExpression.MatchingOptions(), range: NSMakeRange(0, characters.count))
+        let matches = regexp.matches(in: self, options: NSRegularExpression.MatchingOptions(), range: NSMakeRange(0, count))
         var result = ""
         var idx = 0
         for match in matches {
@@ -80,7 +80,7 @@ public extension String {
             result += replacement
             idx = match.range.location + match.range.length
         }
-        result += self[idx..<characters.count]
+        result += self[idx..<count]
         return result
     }
 
