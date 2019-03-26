@@ -11,7 +11,7 @@ import Foundation
 public extension Int {
 
     /// Performs the provided `closure` n times as defined by `self`.
-    public func times(_ closure: () -> ()) {
+    func times(_ closure: () -> ()) {
         for _ in 0..<self {
             closure()
         }

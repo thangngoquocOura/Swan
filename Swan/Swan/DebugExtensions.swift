@@ -21,6 +21,8 @@ extension AVCaptureVideoOrientation: CustomDebugStringConvertible {
             return "LandscapeLeft"
         case .landscapeRight:
             return "LandscapeRight"
+        @unknown default:
+            return "Unknown"
         }
     }
     
@@ -39,6 +41,8 @@ extension UIInterfaceOrientation: CustomDebugStringConvertible {
         case .landscapeRight:
             return "LandscapeRight"
         case .unknown:
+            return "Unknown"
+        @unknown default:
             return "Unknown"
         }
     }
@@ -62,6 +66,8 @@ extension UIDeviceOrientation: CustomDebugStringConvertible {
         case .faceDown:
             return "FaceDown"
         case .unknown:
+            return "Unknown"
+        @unknown default:
             return "Unknown"
         }
     }

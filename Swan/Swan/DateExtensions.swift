@@ -12,43 +12,43 @@ import Foundation
 
 public extension Date {
 
-    public var nanosecond: Int {
+    var nanosecond: Int {
         return Calendar.mainThreadSharedCalendar().component(.nanosecond, from: self)
     }
 
-    public var second: Int {
+    var second: Int {
         return Calendar.mainThreadSharedCalendar().component(.second, from: self)
     }
     
-    public var minute: Int {
+    var minute: Int {
         return Calendar.mainThreadSharedCalendar().component(.minute, from: self)
     }
     
-    public var hour: Int {
+    var hour: Int {
         return Calendar.mainThreadSharedCalendar().component(.hour, from: self)
     }
     
-    public var day: Int {
+    var day: Int {
         return Calendar.mainThreadSharedCalendar().component(.day, from: self)
     }
     
-    public var month: Int {
+    var month: Int {
         return Calendar.mainThreadSharedCalendar().component(.month, from: self)
     }
     
-    public var year: Int {
+    var year: Int {
         return Calendar.mainThreadSharedCalendar().component(.year, from: self)
     }
     
     /// Returns a date set to the start of the day (00:00:00) of this date.
-    public var startOfDay: Date {
+    var startOfDay: Date {
         let calendar = Calendar.mainThreadSharedCalendar()
         let comps = calendar.dateComponents([.year, .month, .day], from: self)
         return calendar.date(from: comps)!
     }
     
     /// Returns a date set to the end of the day (23:59:59) of this date.
-    public var endOfDay: Date {
+    var endOfDay: Date {
         let calendar = Calendar.mainThreadSharedCalendar()
         var comps = calendar.dateComponents([.year, .month, .day], from: self)
         comps.hour = 23
@@ -58,14 +58,14 @@ public extension Date {
     }
 
     /// Returns a date set to the start of the month (1st day, 00:00:00) of this date.
-    public var startOfMonth: Date {
+    var startOfMonth: Date {
         let calendar = Calendar.mainThreadSharedCalendar()
         let comps = calendar.dateComponents([.year, .month], from: self)
         return calendar.date(from: comps)!
     }
 
     /// Returns a date set to the end of the month (last day, 23:59:59) of this date.
-    public var endOfMonth: Date {
+    var endOfMonth: Date {
         let calendar = Calendar.mainThreadSharedCalendar()
         let dayRange = calendar.range(of: .day, in: .month, for: self)!
         var comps = calendar.dateComponents([.year, .month], from: self)
@@ -77,7 +77,7 @@ public extension Date {
     }
 
     /// Returns the noon (12:00:00) of this date.
-    public var noon: Date {
+    var noon: Date {
         let calendar = Calendar.mainThreadSharedCalendar()
         var comps = calendar.dateComponents([.year, .month, .day], from: self)
         comps.hour = 12
@@ -85,13 +85,13 @@ public extension Date {
     }
     
     /// Returns the zero-indexed weekday component of this date starting on monday in range [0, 6].
-    public var zeroIndexedWeekdayStartingOnMonday: Int {
+    var zeroIndexedWeekdayStartingOnMonday: Int {
         let weekday = Calendar.mainThreadSharedCalendar().component(.weekday, from: self)
         return weekday >= 2 ? weekday - 2 : 6
     }
 
     /// Returns the number of calendar days between this date and `date`.
-    public func calendarDaysToDate(_ date: Date) -> Int {
+    func calendarDaysToDate(_ date: Date) -> Int {
         let calendar = Calendar.mainThreadSharedCalendar()
         var fromDate = Date()
         var toDate = Date()
@@ -103,7 +103,7 @@ public extension Date {
     }
     
     /// Returns the number of calendar weeks between this date and `date`.
-    public func calendarWeeksToDate(_ date: Date) -> Int {
+    func calendarWeeksToDate(_ date: Date) -> Int {
         let calendar = Calendar.mainThreadSharedCalendar()
         var fromDate = Date()
         var toDate = Date()
